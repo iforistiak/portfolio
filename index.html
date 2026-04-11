@@ -19,14 +19,13 @@
             --card-bg: #ffffff;
             --text-main: #2f3542;
             --text-muted: #747d8c;
-            --accent-color: var(--green);
             --glass-border: rgba(0, 0, 0, 0.05);
             --shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         [data-theme="dark"] {
-            --bg-color: #0a0e14;
-            --sidebar-bg: #151921;
+            --bg-color: #0a101e;
+            --sidebar-bg: #161b22;
             --card-bg: #1c222d;
             --text-main: #f1f2f6;
             --text-muted: #a4b0be;
@@ -37,25 +36,18 @@
         * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         body { font-family: 'Poppins', sans-serif; background: var(--bg-color); color: var(--text-main); height: 100vh; display: flex; overflow: hidden; }
 
-        /* Sidebar Navigation with Enhanced Animation */
+        /* Sidebar Navigation with Enhanced Effects */
         .sidebar { width: 100px; background: var(--sidebar-bg); display: flex; flex-direction: column; align-items: center; padding: 30px 0; border-right: 1px solid var(--glass-border); z-index: 100; box-shadow: var(--shadow); }
         
         .nav-item { 
             width: 100%; padding: 20px 0; display: flex; flex-direction: column; align-items: center; 
             color: var(--text-muted); cursor: pointer; font-size: 10px; font-weight: 700; 
-            text-transform: uppercase; position: relative; overflow: hidden;
+            text-transform: uppercase; position: relative;
         }
 
-        .nav-item i { font-size: 24px; margin-bottom: 6px; z-index: 2; }
-        .nav-item span { z-index: 2; }
+        .nav-item i { font-size: 24px; margin-bottom: 6px; }
 
         /* Advanced Nav Active Effect */
-        .nav-item::before {
-            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(46, 134, 222, 0.1), transparent);
-            transition: 0.5s;
-        }
-
         .nav-item.active { color: var(--blue); }
         .nav-item.active i { color: var(--green); filter: drop-shadow(0 0 8px var(--green)); transform: scale(1.1); }
         
@@ -81,19 +73,20 @@
         /* Social Media Icons - Advanced RGB Animation */
         .social-box { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 25px; }
         .social-box a { 
-            width: 45px; height: 45px; background: var(--sidebar-bg); border-radius: 12px; display: flex; 
+            width: 45px; height: 45px; background: var(--bg-color); border-radius: 12px; display: flex; 
             align-items: center; justify-content: center; color: var(--text-main); text-decoration: none;
-            box-shadow: var(--shadow); border: 1px solid var(--glass-border); position: relative;
-            font-size: 18px;
+            box-shadow: var(--shadow); border: 1px solid var(--glass-border); font-size: 18px;
         }
 
-        .social-box a:hover {
-            color: #fff; transform: translateY(-8px);
-        }
-        /* Individual RGB Glow on Hover */
-        .social-box a:nth-child(3n+1):hover { background: var(--red); box-shadow: 0 10px 20px rgba(255, 71, 87, 0.4); }
-        .social-box a:nth-child(3n+2):hover { background: var(--blue); box-shadow: 0 10px 20px rgba(46, 134, 222, 0.4); }
-        .social-box a:nth-child(3n+3):hover { background: var(--green); box-shadow: 0 10px 20px rgba(46, 204, 113, 0.4); }
+        /* RGB Hover Effects for Social Icons */
+        .social-box a:hover { color: #fff; transform: translateY(-8px) scale(1.1); }
+        .social-box a:nth-child(1):hover { background: #1877F2; } /* FB Blue */
+        .social-box a:nth-child(2):hover { background: #E4405F; } /* Insta Red */
+        .social-box a:nth-child(3):hover { background: #BD081C; } /* Pinterest Red */
+        .social-box a:nth-child(4):hover { background: #0077B5; } /* LinkedIn Blue */
+        .social-box a:nth-child(5):hover { background: #FF0000; } /* YouTube Red */
+        .social-box a:nth-child(6):hover { background: #0088CC; } /* Telegram Blue */
+        .social-box a:nth-child(7):hover { background: #333; }    /* GitHub Dark */
 
         /* Typing & Hire Me */
         .typing-container { color: var(--blue); font-weight: 700; font-size: 18px; margin: 10px 0; letter-spacing: 1px; }
@@ -103,38 +96,45 @@
             display: inline-block; box-shadow: 0 5px 15px rgba(46, 134, 222, 0.3);
         }
 
-        /* Content Area */
-        .content-container { flex: 1; padding: 60px; overflow-y: auto; scroll-behavior: smooth; }
-        .page-section { display: none; animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+        /* Content Area Container */
+        .content-container { flex: 1; padding: 60px; overflow-y: auto; scroll-behavior: smooth; position: relative; }
+        .page-section { display: none; max-width: 900px; animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
         .page-section.active { display: block; }
         @keyframes slideIn { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
 
-        /* Skill Bars RGB */
+        /* Education Page Styling */
+        .edu-card { background: var(--card-bg); border-radius: 20px; padding: 30px; margin-bottom: 25px; border-left: 6px solid var(--blue); box-shadow: var(--shadow); }
+        .edu-card h3 { color: var(--blue); margin-bottom: 10px; }
+        .edu-card .year { font-weight: bold; color: var(--red); display: block; margin-bottom: 10px; }
+
+        /* Projects Layout */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .project-card { background: var(--card-bg); border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--glass-border); }
+        .project-img { height: 180px; background: #2f3542 url('https://via.placeholder.com/400x200') center/cover; }
+        .project-details { padding: 20px; }
+
+        /* Skills RGB Bars */
         .skill-item { margin-bottom: 25px; }
         .progress-bar { width: 100%; height: 12px; background: rgba(0,0,0,0.1); border-radius: 20px; overflow: hidden; margin-top: 10px;}
         .progress-fill { height: 100%; border-radius: 20px; width: 0; transition: 1.5s cubic-bezier(0.1, 0.5, 0.5, 1); }
-        
-        /* Skills RGB Variation */
-        .s-red { background: var(--red); }
-        .s-blue { background: var(--blue); }
-        .s-green { background: var(--green); }
+        .s-blue { background: var(--blue); box-shadow: 0 0 10px var(--blue); }
+        .s-green { background: var(--green); box-shadow: 0 0 10px var(--green); }
+        .s-red { background: var(--red); box-shadow: 0 0 10px var(--red); }
 
         .theme-btn { margin-top: auto; cursor: pointer; padding: 15px; font-size: 22px; color: var(--blue); }
 
-        /* Responsive */
         @media (max-width: 1000px) {
             body { flex-direction: column; overflow-y: auto; height: auto; }
             .sidebar { width: 100%; height: 70px; flex-direction: row; position: fixed; bottom: 0; padding: 0; }
             .profile-side { width: 100%; padding: 80px 20px; }
             .content-container { padding: 40px 20px 100px 20px; }
-            .nav-item::after { top: auto; bottom: 0; width: 50%; height: 4px; left: 25%; }
         }
     </style>
 </head>
 <body data-theme="light">
 
     <nav class="sidebar">
-        <div class="nav-item active" onclick="showPage('home', this)"> <i class="fas fa-th-large"></i> <span>Home</span> </div>
+        <div class="nav-item active" onclick="showPage('home', this)"> <i class="fas fa-home"></i> <span>Home</span> </div>
         <div class="nav-item" onclick="showPage('projects', this)"> <i class="fas fa-rocket"></i> <span>Projects</span> </div>
         <div class="nav-item" onclick="showPage('education', this)"> <i class="fas fa-user-graduate"></i> <span>Education</span> </div>
         <div class="nav-item" onclick="showPage('skills', this)"> <i class="fas fa-chart-line"></i> <span>Skills</span> </div>
@@ -145,19 +145,20 @@
 
     <aside class="profile-side">
         <div class="profile-img"></div>
-        <h2 style="letter-spacing: 1px;">MD. ISTIAK ISLAM</h2>
+        <h2>MD. ISTIAK ISLAM</h2>
         <div class="typing-container"><span id="type-text"></span></div>
         
         <div class="social-box">
-            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://facebook.com/yourlink" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/yourlink" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://pinterest.com/yourlink" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linkedin.com/in/yourlink" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/yourlink" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://t.me/yourusername" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://github.com/yourlink" target="_blank"><i class="fab fa-github"></i></a>
         </div>
 
-        <a href="https://t.me/istiak_username" class="hire-btn">LETS TALK <i class="fas fa-comments"></i></a>
+        <a href="https://t.me/yourusername" class="hire-btn">LETS TALK <i class="fas fa-comments"></i></a>
     </aside>
 
     <main class="content-container">
@@ -165,42 +166,72 @@
         <section id="home" class="page-section active">
             <h1 style="font-size: 3rem; margin-bottom: 20px; color: var(--blue);">Creative <span style="color: var(--green);">Mind,</span> <br>Expert <span style="color: var(--red);">Solutions.</span></h1>
             <div style="background: var(--card-bg); padding: 35px; border-radius: 25px; border-left: 8px solid var(--blue); box-shadow: var(--shadow);">
-                <p style="font-size: 1.1rem; line-height: 1.8;">আমি একজন আইটি প্রফেশনাল। প্রযুক্তির এই লাল-নীল-সবুজ দুনিয়ায় আমি সমাধান খুঁজি কোড এবং ক্রিয়েটিভিটি দিয়ে। আমার এই পোর্টফোলিওতে আপনাকে স্বাগতম।</p>
+                <p>আইটি এবং ওয়েব টেকনোলজির এই দুনিয়ায় আমি আপনার আইডিয়াগুলোকে বাস্তবে রূপ দিতে কাজ করি। নিচে আমার ক্যারিয়ার এবং দক্ষতাগুলো দেখুন।</p>
+            </div>
+        </section>
+
+        <section id="projects" class="page-section">
+            <h2 style="margin-bottom: 30px; border-bottom: 3px solid var(--red); display: inline-block;">Latest Work</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-img"></div>
+                    <div class="project-details">
+                        <h3>Project One</h3>
+                        <p>একটি আধুনিক ওয়েব ডিজাইন প্রজেক্ট।</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img"></div>
+                    <div class="project-details">
+                        <h3>Project Two</h3>
+                        <p>সফটওয়্যার অটোমেশন প্রজেক্ট।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="page-section">
+            <h2 style="margin-bottom: 30px; border-bottom: 3px solid var(--blue); display: inline-block;">Educational Background</h2>
+            <div class="edu-card">
+                <span class="year">2018 - 2022</span>
+                <h3>B.Sc in Computer Science</h3>
+                <p>University of Excellence</p>
+                <p>কম্পিউটার সায়েন্সের উপর গ্র্যাজুয়েশন এবং ডাটাবেজ ম্যানেজমেন্টে দক্ষতা অর্জন।</p>
+            </div>
+            <div class="edu-card">
+                <span class="year">2016 - 2018</span>
+                <h3>Higher Secondary Certificate</h3>
+                <p>Government City College</p>
             </div>
         </section>
 
         <section id="skills" class="page-section">
-            <h2 style="margin-bottom: 40px; border-bottom: 3px solid var(--green); display: inline-block; padding-bottom: 5px;">My Expertise</h2>
+            <h2 style="margin-bottom: 30px; border-bottom: 3px solid var(--green); display: inline-block;">Technical Expertise</h2>
             <div class="skill-item">
                 <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>Web Development</span><span>95%</span></div>
                 <div class="progress-bar"><div class="progress-fill s-blue" data-percent="95%"></div></div>
             </div>
             <div class="skill-item">
-                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>Server Management</span><span>90%</span></div>
+                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>IT Support & Servers</span><span>90%</span></div>
                 <div class="progress-bar"><div class="progress-fill s-green" data-percent="90%"></div></div>
             </div>
             <div class="skill-item">
-                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>UI/UX Design</span><span>85%</span></div>
+                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>Graphics Design</span><span>85%</span></div>
                 <div class="progress-bar"><div class="progress-fill s-red" data-percent="85%"></div></div>
             </div>
         </section>
 
-        <section id="projects" class="page-section">
-             <h2 style="margin-bottom: 40px; border-bottom: 3px solid var(--red); display: inline-block; padding-bottom: 5px;">Recent Work</h2>
-             <p>প্রজেক্টের কন্টেন্ট এখানে যুক্ত করুন...</p>
-        </section>
-
         <section id="contact" class="page-section">
-            <h2 style="margin-bottom: 30px;">Get In Touch</h2>
-            <div style="background: var(--card-bg); padding: 30px; border-radius: 20px; border: 1px solid var(--glass-border); box-shadow: var(--shadow);">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116515.6695627622!2d89.01502447471207!3d24.380729792556557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fbefd0a55aa957%3A0x23144d9304104711!2sRajshahi!5e0!3m2!1sen!2sbd!4v1680000000000!5m2!1sen!2sbd" width="100%" height="250" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"></iframe>
+            <h2 style="margin-bottom: 30px;">Contact & Location</h2>
+            <div style="background: var(--card-bg); padding: 20px; border-radius: 20px; box-shadow: var(--shadow);">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116334.5666922967!2d88.52924409322305!3d24.378121511211756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fbefd0a551957f%3A0x44c0d0bc4309f8c9!2sRajshahi!5e0!3m2!1sen!2sbd!4v1712850000000!5m2!1sen!2sbd" width="100%" height="300" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
 
     </main>
 
     <script>
-        // Theme Switch
+        // Toggle Theme
         function toggleTheme() {
             const b = document.body;
             const i = document.getElementById("t-icon");
@@ -209,13 +240,24 @@
             i.className = isDark ? "fas fa-adjust" : "fas fa-sun";
         }
 
-        // Navigation & Skill Animation
+        // Fixed Page Swapping Logic
         function showPage(id, el) {
-            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            el.classList.add('active');
+            // Hide all sections
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(s => s.classList.remove('active'));
 
+            // Remove active from all nav items
+            const navs = document.querySelectorAll('.nav-item');
+            navs.forEach(n => n.classList.remove('active'));
+
+            // Show selected section
+            const target = document.getElementById(id);
+            if(target) {
+                target.classList.add('active');
+                el.classList.add('active');
+            }
+
+            // Animate Skill Bars if skills page
             if(id === 'skills') {
                 setTimeout(() => {
                     document.querySelectorAll('.progress-fill').forEach(p => p.style.width = p.getAttribute('data-percent'));
@@ -223,9 +265,12 @@
             } else {
                 document.querySelectorAll('.progress-fill').forEach(p => p.style.width = '0');
             }
+            
+            // Auto scroll to top on change
+            document.querySelector('.content-container').scrollTop = 0;
         }
 
-        // Typing Animation
+        // Typing Effect
         const txt = ["IT Specialist", "Web Developer", "Graphics Designer", "Support Admin"];
         let r=0, c=0, del=false;
         function type() {
