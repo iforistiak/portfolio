@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Istiak Islam | RGB Pro Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* RGB Theme Colors */
+            --red: #ff4757;
+            --blue: #2e86de;
+            --green: #2ecc71;
+            
+            --bg-color: #f0f2f5;
+            --sidebar-bg: #ffffff;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-muted: #747d8c;
+            --accent-color: var(--green);
+            --glass-border: rgba(0, 0, 0, 0.05);
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0a0e14;
+            --sidebar-bg: #151921;
+            --card-bg: #1c222d;
+            --text-main: #f1f2f6;
+            --text-muted: #a4b0be;
+            --glass-border: rgba(255, 255, 255, 0.05);
+            --shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg-color); color: var(--text-main); height: 100vh; display: flex; overflow: hidden; }
+
+        /* Sidebar Navigation with Enhanced Animation */
+        .sidebar { width: 100px; background: var(--sidebar-bg); display: flex; flex-direction: column; align-items: center; padding: 30px 0; border-right: 1px solid var(--glass-border); z-index: 100; box-shadow: var(--shadow); }
+        
+        .nav-item { 
+            width: 100%; padding: 20px 0; display: flex; flex-direction: column; align-items: center; 
+            color: var(--text-muted); cursor: pointer; font-size: 10px; font-weight: 700; 
+            text-transform: uppercase; position: relative; overflow: hidden;
+        }
+
+        .nav-item i { font-size: 24px; margin-bottom: 6px; z-index: 2; }
+        .nav-item span { z-index: 2; }
+
+        /* Advanced Nav Active Effect */
+        .nav-item::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(46, 134, 222, 0.1), transparent);
+            transition: 0.5s;
+        }
+
+        .nav-item.active { color: var(--blue); }
+        .nav-item.active i { color: var(--green); filter: drop-shadow(0 0 8px var(--green)); transform: scale(1.1); }
+        
+        .nav-item.active::after {
+            content: ''; position: absolute; right: 0; top: 15%; height: 70%; width: 5px;
+            background: var(--red); border-radius: 5px 0 0 5px; box-shadow: -2px 0 10px var(--red);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+
+        /* Profile Side */
+        .profile-side { width: 420px; background: var(--sidebar-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; text-align: center; border-right: 1px solid var(--glass-border); }
+        
+        .profile-img { 
+            width: 190px; height: 190px; border-radius: 45px; 
+            background: url('https://via.placeholder.com/300') center/cover; 
+            border: 4px solid var(--blue); margin-bottom: 25px; box-shadow: var(--shadow);
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
+
+        /* Social Media Icons - Advanced RGB Animation */
+        .social-box { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 25px; }
+        .social-box a { 
+            width: 45px; height: 45px; background: var(--sidebar-bg); border-radius: 12px; display: flex; 
+            align-items: center; justify-content: center; color: var(--text-main); text-decoration: none;
+            box-shadow: var(--shadow); border: 1px solid var(--glass-border); position: relative;
+            font-size: 18px;
+        }
+
+        .social-box a:hover {
+            color: #fff; transform: translateY(-8px);
+        }
+        /* Individual RGB Glow on Hover */
+        .social-box a:nth-child(3n+1):hover { background: var(--red); box-shadow: 0 10px 20px rgba(255, 71, 87, 0.4); }
+        .social-box a:nth-child(3n+2):hover { background: var(--blue); box-shadow: 0 10px 20px rgba(46, 134, 222, 0.4); }
+        .social-box a:nth-child(3n+3):hover { background: var(--green); box-shadow: 0 10px 20px rgba(46, 204, 113, 0.4); }
+
+        /* Typing & Hire Me */
+        .typing-container { color: var(--blue); font-weight: 700; font-size: 18px; margin: 10px 0; letter-spacing: 1px; }
+        .hire-btn { 
+            background: linear-gradient(45deg, var(--blue), var(--green)); color: white; border: none; 
+            padding: 14px 35px; border-radius: 12px; font-weight: 700; text-decoration: none; margin-top: 25px; 
+            display: inline-block; box-shadow: 0 5px 15px rgba(46, 134, 222, 0.3);
+        }
+
+        /* Content Area */
+        .content-container { flex: 1; padding: 60px; overflow-y: auto; scroll-behavior: smooth; }
+        .page-section { display: none; animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+        .page-section.active { display: block; }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+
+        /* Skill Bars RGB */
+        .skill-item { margin-bottom: 25px; }
+        .progress-bar { width: 100%; height: 12px; background: rgba(0,0,0,0.1); border-radius: 20px; overflow: hidden; margin-top: 10px;}
+        .progress-fill { height: 100%; border-radius: 20px; width: 0; transition: 1.5s cubic-bezier(0.1, 0.5, 0.5, 1); }
+        
+        /* Skills RGB Variation */
+        .s-red { background: var(--red); }
+        .s-blue { background: var(--blue); }
+        .s-green { background: var(--green); }
+
+        .theme-btn { margin-top: auto; cursor: pointer; padding: 15px; font-size: 22px; color: var(--blue); }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            body { flex-direction: column; overflow-y: auto; height: auto; }
+            .sidebar { width: 100%; height: 70px; flex-direction: row; position: fixed; bottom: 0; padding: 0; }
+            .profile-side { width: 100%; padding: 80px 20px; }
+            .content-container { padding: 40px 20px 100px 20px; }
+            .nav-item::after { top: auto; bottom: 0; width: 50%; height: 4px; left: 25%; }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <nav class="sidebar">
+        <div class="nav-item active" onclick="showPage('home', this)"> <i class="fas fa-th-large"></i> <span>Home</span> </div>
+        <div class="nav-item" onclick="showPage('projects', this)"> <i class="fas fa-rocket"></i> <span>Projects</span> </div>
+        <div class="nav-item" onclick="showPage('education', this)"> <i class="fas fa-user-graduate"></i> <span>Education</span> </div>
+        <div class="nav-item" onclick="showPage('skills', this)"> <i class="fas fa-chart-line"></i> <span>Skills</span> </div>
+        <div class="nav-item" onclick="showPage('contact', this)"> <i class="fas fa-map-marked-alt"></i> <span>Contact</span> </div>
+        
+        <div class="theme-btn" onclick="toggleTheme()"> <i class="fas fa-adjust" id="t-icon"></i> </div>
+    </nav>
+
+    <aside class="profile-side">
+        <div class="profile-img"></div>
+        <h2 style="letter-spacing: 1px;">MD. ISTIAK ISLAM</h2>
+        <div class="typing-container"><span id="type-text"></span></div>
+        
+        <div class="social-box">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+
+        <a href="https://t.me/istiak_username" class="hire-btn">LETS TALK <i class="fas fa-comments"></i></a>
+    </aside>
+
+    <main class="content-container">
+        
+        <section id="home" class="page-section active">
+            <h1 style="font-size: 3rem; margin-bottom: 20px; color: var(--blue);">Creative <span style="color: var(--green);">Mind,</span> <br>Expert <span style="color: var(--red);">Solutions.</span></h1>
+            <div style="background: var(--card-bg); padding: 35px; border-radius: 25px; border-left: 8px solid var(--blue); box-shadow: var(--shadow);">
+                <p style="font-size: 1.1rem; line-height: 1.8;">আমি একজন আইটি প্রফেশনাল। প্রযুক্তির এই লাল-নীল-সবুজ দুনিয়ায় আমি সমাধান খুঁজি কোড এবং ক্রিয়েটিভিটি দিয়ে। আমার এই পোর্টফোলিওতে আপনাকে স্বাগতম।</p>
+            </div>
+        </section>
+
+        <section id="skills" class="page-section">
+            <h2 style="margin-bottom: 40px; border-bottom: 3px solid var(--green); display: inline-block; padding-bottom: 5px;">My Expertise</h2>
+            <div class="skill-item">
+                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>Web Development</span><span>95%</span></div>
+                <div class="progress-bar"><div class="progress-fill s-blue" data-percent="95%"></div></div>
+            </div>
+            <div class="skill-item">
+                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>Server Management</span><span>90%</span></div>
+                <div class="progress-bar"><div class="progress-fill s-green" data-percent="90%"></div></div>
+            </div>
+            <div class="skill-item">
+                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>UI/UX Design</span><span>85%</span></div>
+                <div class="progress-bar"><div class="progress-fill s-red" data-percent="85%"></div></div>
+            </div>
+        </section>
+
+        <section id="projects" class="page-section">
+             <h2 style="margin-bottom: 40px; border-bottom: 3px solid var(--red); display: inline-block; padding-bottom: 5px;">Recent Work</h2>
+             <p>প্রজেক্টের কন্টেন্ট এখানে যুক্ত করুন...</p>
+        </section>
+
+        <section id="contact" class="page-section">
+            <h2 style="margin-bottom: 30px;">Get In Touch</h2>
+            <div style="background: var(--card-bg); padding: 30px; border-radius: 20px; border: 1px solid var(--glass-border); box-shadow: var(--shadow);">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116515.6695627622!2d89.01502447471207!3d24.380729792556557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fbefd0a55aa957%3A0x23144d9304104711!2sRajshahi!5e0!3m2!1sen!2sbd!4v1680000000000!5m2!1sen!2sbd" width="100%" height="250" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Theme Switch
+        function toggleTheme() {
+            const b = document.body;
+            const i = document.getElementById("t-icon");
+            const isDark = b.getAttribute("data-theme") === "dark";
+            b.setAttribute("data-theme", isDark ? "light" : "dark");
+            i.className = isDark ? "fas fa-adjust" : "fas fa-sun";
+        }
+
+        // Navigation & Skill Animation
+        function showPage(id, el) {
+            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            el.classList.add('active');
+
+            if(id === 'skills') {
+                setTimeout(() => {
+                    document.querySelectorAll('.progress-fill').forEach(p => p.style.width = p.getAttribute('data-percent'));
+                }, 400);
+            } else {
+                document.querySelectorAll('.progress-fill').forEach(p => p.style.width = '0');
+            }
+        }
+
+        // Typing Animation
+        const txt = ["IT Specialist", "Web Developer", "Graphics Designer", "Support Admin"];
+        let r=0, c=0, del=false;
+        function type() {
+            const curr = txt[r];
+            const disp = del ? curr.substring(0, c-1) : curr.substring(0, c+1);
+            document.getElementById("type-text").textContent = disp;
+            c = del ? c-1 : c+1;
+            if(!del && c === curr.length) { del=true; setTimeout(type, 1500); }
+            else if(del && c === 0) { del=false; r = (r+1)%txt.length; setTimeout(type, 500); }
+            else { setTimeout(type, del ? 50 : 120); }
+        }
+        document.addEventListener("DOMContentLoaded", type);
+    </script>
+</body>
+</html>
