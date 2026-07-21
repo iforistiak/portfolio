@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Md. Istiak Islam | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -19,8 +19,9 @@
             --card-bg: #ffffff;
             --text-main: #2f3542;
             --text-muted: #747d8c;
-            --glass-border: rgba(0, 0, 0, 0.05);
+            --glass-border: rgba(0, 0, 0, 0.06);
             --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --hover-bg: rgba(46, 134, 222, 0.08);
         }
 
         [data-theme="dark"] {
@@ -29,57 +30,153 @@
             --card-bg: #1c222d;
             --text-main: #f1f2f6;
             --text-muted: #a4b0be;
-            --glass-border: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.07);
             --shadow: 0 10px 40px rgba(0,0,0,0.4);
+            --hover-bg: rgba(46, 204, 113, 0.12);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background: var(--bg-color); color: var(--text-main); height: 100vh; display: flex; overflow: hidden; }
 
         /* Sidebar Navigation */
-        .sidebar { width: 100px; background: var(--sidebar-bg); display: flex; flex-direction: column; align-items: center; padding: 30px 0; border-right: 1px solid var(--glass-border); z-index: 100; box-shadow: var(--shadow); }
+        .sidebar { 
+            width: 110px; 
+            background: var(--sidebar-bg); 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding: 20px 0; 
+            border-right: 1px solid var(--glass-border); 
+            z-index: 100; 
+            box-shadow: var(--shadow);
+            justify-content: space-between;
+        }
         
-        .nav-item { 
-            width: 100%; padding: 20px 0; display: flex; flex-direction: column; align-items: center; 
-            color: var(--text-muted); cursor: pointer; font-size: 10px; font-weight: 700; 
-            text-transform: uppercase; position: relative; transition: all 0.2s ease;
+        .brand-logo-container {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        .brand-logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .brand-logo-container:hover {
+            transform: scale(1.1) rotate(4deg);
         }
 
-        .nav-item i { font-size: 24px; margin-bottom: 6px; transition: all 0.2s ease; }
+        .nav-menu {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
 
-        /* SAFE & PURE CSS: 3D Pop-up & Glow Active Effect (No JS Interferences) */
-        .nav-item.active { color: var(--blue); font-weight: 800; }
+        .nav-item { 
+            width: 88%; 
+            padding: 12px 0; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            color: var(--text-muted); 
+            cursor: pointer; 
+            font-size: 9px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            position: relative; 
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .nav-item:hover {
+            background: var(--hover-bg);
+            color: var(--blue);
+        }
+
+        .nav-item i { font-size: 20px; margin-bottom: 4px; transition: all 0.25s ease; }
+
+        /* Focused 3D & Glow Active State */
+        .nav-item.active { 
+            color: var(--blue); 
+            font-weight: 800; 
+            background: var(--hover-bg);
+            box-shadow: inset 0 0 0 1px var(--glass-border);
+        }
         .nav-item.active i { 
             color: var(--green); 
             transform: scale(1.2) translateY(-2px); 
-            filter: drop-shadow(0 4px 6px rgba(46, 204, 113, 0.4)) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.15));
+            filter: drop-shadow(0 4px 8px rgba(46, 204, 113, 0.4));
         }
         
         .nav-item.active::after {
-            content: ''; position: absolute; right: 0; top: 15%; height: 70%; width: 5px;
-            background: var(--red); border-radius: 5px 0 0 5px; box-shadow: -2px 0 10px var(--red);
+            content: ''; position: absolute; right: -6px; top: 20%; height: 60%; width: 4px;
+            background: var(--red); border-radius: 4px 0 0 4px; box-shadow: -2px 0 8px var(--red);
+        }
+
+        /* Round Day/Night Mode Switch Button */
+        .round-theme-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 2px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--blue);
+            font-size: 18px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .round-theme-btn:hover {
+            transform: scale(1.1) rotate(15deg);
+            border-color: var(--blue);
+        }
+
+        [data-theme="dark"] .round-theme-btn {
+            color: var(--green);
+            border-color: rgba(255,255,255,0.15);
         }
 
         /* Profile Side */
-        .profile-side { width: 420px; background: var(--sidebar-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; text-align: center; border-right: 1px solid var(--glass-border); }
+        .profile-side { 
+            width: 380px; 
+            background: var(--sidebar-bg); 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 35px 25px; 
+            text-align: center; 
+            border-right: 1px solid var(--glass-border); 
+        }
         
         .profile-img { 
-            width: 190px; height: 190px; border-radius: 45px; 
+            width: 170px; height: 170px; border-radius: 45px; 
             background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfcaG48pqttCGyk_lyBVM7hV6o27XHEDB7_-lOYy1HRVHmhW59qqjZE4g&s=10') center/cover; 
-            border: 4px solid var(--blue); margin-bottom: 25px; box-shadow: var(--shadow);
+            border: 4px solid var(--blue); margin-bottom: 22px; box-shadow: var(--shadow);
             animation: float 4s ease-in-out infinite;
         }
-        @keyframes float { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-8px) rotate(2deg); } }
 
         /* Social Media Icons */
-        .social-box { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 25px; }
+        .social-box { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 22px; }
         .social-box a { 
-            width: 45px; height: 45px; background: var(--bg-color); border-radius: 12px; display: flex; 
+            width: 42px; height: 42px; background: var(--bg-color); border-radius: 12px; display: flex; 
             align-items: center; justify-content: center; color: var(--text-main); text-decoration: none;
-            box-shadow: var(--shadow); border: 1px solid var(--glass-border); font-size: 18px;
-            transition: all 0.3s;
+            box-shadow: var(--shadow); border: 1px solid var(--glass-border); font-size: 17px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .social-box a:hover { color: #fff; transform: translateY(-8px) scale(1.1); }
+        .social-box a:hover { color: #fff; transform: translateY(-6px) scale(1.08); }
         .social-box a:nth-child(1):hover { background: #1877F2; }
         .social-box a:nth-child(2):hover { background: #E4405F; }
         .social-box a:nth-child(3):hover { background: #BD081C; }
@@ -89,68 +186,261 @@
         .social-box a:nth-child(7):hover { background: #333; }
 
         /* Typing & Hire Me */
-        .typing-container { color: var(--blue); font-weight: 700; font-size: 18px; margin: 10px 0; letter-spacing: 1px; min-height: 27px; }
+        .typing-container { color: var(--blue); font-weight: 700; font-size: 16px; margin: 8px 0; letter-spacing: 0.5px; min-height: 26px; }
         .hire-btn { 
             background: linear-gradient(45deg, var(--blue), var(--green)); color: white; border: none; 
-            padding: 14px 35px; border-radius: 12px; font-weight: 700; text-decoration: none; margin-top: 25px; 
-            display: inline-block; box-shadow: 0 5px 15px rgba(46, 134, 222, 0.3);
+            padding: 13px 32px; border-radius: 12px; font-weight: 700; text-decoration: none; margin-top: 22px; 
+            display: inline-block; box-shadow: 0 5px 15px rgba(46, 134, 222, 0.3); transition: transform 0.3s, box-shadow 0.3s;
         }
+        .hire-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(46, 134, 222, 0.4); }
 
         /* Content Area Container */
-        .content-container { flex: 1; padding: 60px; overflow-y: auto; scroll-behavior: smooth; position: relative; }
-        .page-section { display: none; max-width: 900px; }
-        .page-section.active { display: block; animation: slideIn 0.4s ease-out forwards; }
-        @keyframes slideIn { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+        .content-container { flex: 1; padding: 45px; overflow-y: auto; scroll-behavior: smooth; position: relative; }
+        .page-section { display: none; max-width: 950px; margin: 0 auto; }
+        .page-section.active { display: block; animation: slideIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(25px); } to { opacity: 1; transform: translateX(0); } }
 
-        /* Appointment Form Layout */
-        .booking-card { background: var(--card-bg); border-radius: 20px; padding: 35px; box-shadow: var(--shadow); border: 1px solid var(--glass-border); border-top: 6px solid var(--green); }
-        .booking-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 20px; }
-        .booking-field { display: flex; flex-direction: column; }
-        .booking-field label { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-main); }
-        .booking-field input, .booking-field select {
-            padding: 12px 15px; background: var(--bg-color); border: 1px solid var(--glass-border); 
-            border-radius: 10px; color: var(--text-main); font-family: inherit; font-size: 14px; outline: none;
-            transition: all 0.3s;
+        /* Unified Card Styles */
+        .info-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--glass-border);
+            margin-bottom: 25px;
         }
-        .booking-field input:focus, .booking-field select:focus { 
-            border-color: var(--blue); 
-            box-shadow: 0 0 0 3px rgba(46, 134, 222, 0.15);
-        }
-        .booking-btn {
-            background: linear-gradient(45deg, var(--green), var(--blue)); color: white; border: none;
-            padding: 14px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer;
-            width: 100%; transition: all 0.3s; box-shadow: 0 4px 12px rgba(46, 204, 113, 0.2); display: flex; justify-content: center; align-items: center; gap: 10px;
-        }
-        .booking-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(46, 204, 113, 0.3); }
 
-        /* Education Page Styling */
-        .edu-card { background: var(--card-bg); border-radius: 20px; padding: 30px; margin-bottom: 25px; border-left: 6px solid var(--blue); box-shadow: var(--shadow); }
-        .edu-card h3 { color: var(--blue); margin-bottom: 10px; }
-        .edu-card .year { font-weight: bold; color: var(--red); display: block; margin-bottom: 10px; }
-
-        /* Projects Layout */
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .project-card { background: var(--card-bg); border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--glass-border); }
-        .project-img { height: 180px; background: #2f3542 url('https://via.placeholder.com/400x200') center/cover; }
+        /* My Project & Skills Merged Layout */
+        .section-block { margin-bottom: 40px; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .project-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--glass-border); transition: transform 0.3s; }
+        .project-card:hover { transform: translateY(-5px); }
+        .project-img { height: 170px; background: #2f3542 url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500') center/cover; }
         .project-details { padding: 20px; }
 
         /* Skills RGB Bars */
-        .skill-item { margin-bottom: 25px; }
-        .progress-bar { width: 100%; height: 12px; background: rgba(0,0,0,0.1); border-radius: 20px; overflow: hidden; margin-top: 10px;}
+        .skill-item { margin-bottom: 20px; }
+        .progress-bar { width: 100%; height: 12px; background: rgba(0,0,0,0.08); border-radius: 20px; overflow: hidden; margin-top: 8px;}
         .progress-fill { height: 100%; border-radius: 20px; width: 0; transition: 1.2s ease-out; }
         .s-blue { background: var(--blue); box-shadow: 0 0 10px var(--blue); }
         .s-green { background: var(--green); box-shadow: 0 0 10px var(--green); }
         .s-red { background: var(--red); box-shadow: 0 0 10px var(--red); }
 
-        .theme-btn { margin-top: auto; cursor: pointer; padding: 15px; font-size: 22px; color: var(--blue); }
+        /* IT Courses Section */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .course-card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-img {
+            height: 160px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .course-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .course-badge {
+            display: inline-block;
+            background: var(--hover-bg);
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+
+        .course-btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 15px;
+        }
+
+        .course-btn {
+            flex: 1;
+            padding: 9px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .btn-join { background: var(--blue); color: white; }
+        .btn-join:hover { background: #1e73be; }
+        .btn-resource { background: var(--hover-bg); color: var(--text-main); border: 1px solid var(--glass-border); }
+        .btn-resource:hover { background: var(--blue); color: white; }
+
+       /* E-TECH SHOP SECTION */
+        .shop-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .shop-search {
+            position: relative;
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+        }
+
+        .shop-search input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-main);
+            outline: none;
+            font-size: 13.5px;
+            box-shadow: var(--shadow);
+        }
+        .shop-search input:focus { border-color: var(--blue); }
+        .shop-search i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+
+        .shop-categories { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 25px; }
+
+        .cat-btn {
+            padding: 8px 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            color: var(--text-muted);
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            box-shadow: var(--shadow);
+        }
+
+        .cat-btn.active, .cat-btn:hover {
+            background: var(--blue);
+            color: white;
+            border-color: var(--blue);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover { transform: translateY(-5px); }
+
+        .product-img-box { position: relative; height: 165px; overflow: hidden; background: var(--bg-color); }
+        .product-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        .product-info { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+        .product-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .product-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px; flex: 1; }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 12px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .product-price { font-size: 17px; font-weight: 800; color: var(--green); }
+
+        .buy-wa-btn {
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Merged Contact Me (Booking + Location) */
+        .contact-merged-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .booking-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 15px; }
+        .booking-field { display: flex; flex-direction: column; }
+        .booking-field label { font-size: 12.5px; font-weight: 600; margin-bottom: 6px; }
+        .booking-field input, .booking-field select {
+            padding: 10px 12px; background: var(--bg-color); border: 1px solid var(--glass-border); 
+            border-radius: 10px; color: var(--text-main); font-family: inherit; font-size: 13.5px; outline: none;
+        }
+        .booking-btn {
+            background: linear-gradient(45deg, var(--green), var(--blue)); color: white; border: none;
+            padding: 13px; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer;
+            width: 100%; box-shadow: 0 4px 12px rgba(46, 204, 113, 0.2);
+        }
+
+        /* Education */
+        .edu-card { background: var(--card-bg); border-radius: 18px; padding: 22px 25px; margin-bottom: 18px; border-left: 6px solid var(--blue); box-shadow: var(--shadow); }
+        .edu-card h3 { color: var(--blue); font-size: 17px; margin-bottom: 4px; }
+        .edu-card .year { font-weight: 700; color: var(--red); font-size: 12px; }
 
         @media (max-width: 1000px) {
             body { flex-direction: column; overflow-y: auto; height: auto; }
-            .sidebar { width: 100%; height: 70px; flex-direction: row; position: fixed; bottom: 0; padding: 0; }
-            .nav-item { width: auto; flex: 1; padding: 10px 0; }
-            .theme-btn { margin-top: 0; padding: 10px 20px; }
-            .profile-side { width: 100%; padding: 80px 20px; }
-            .content-container { padding: 40px 20px 100px 20px; }
+            .sidebar { 
+                width: 100%; 
+                height: 65px; 
+                flex-direction: row; 
+                position: fixed; 
+                bottom: 0; 
+                padding: 0 15px; 
+                justify-content: space-around;
+            }
+            .brand-logo-container { display: none; }
+            .nav-menu { flex-direction: row; width: auto; gap: 4px; }
+            .nav-item { padding: 8px 8px; font-size: 8px; }
+            .nav-item i { font-size: 16px; margin-bottom: 2px; }
+            .nav-item.active::after { display: none; }
+            .profile-side { width: 100%; padding: 50px 20px 25px; }
+            .content-container { padding: 25px 18px 85px; }
+            .round-theme-btn { width: 38px; height: 38px; font-size: 15px; }
         }
     </style>
 </head>
@@ -158,14 +448,27 @@
 
     <!-- Nav Sidebar -->
     <nav class="sidebar">
-        <div class="nav-item active" onclick="showPage('home', this)"> <i class="fas fa-home"></i> <span>Home</span> </div>
-        <div class="nav-item" onclick="showPage('projects', this)"> <i class="fas fa-rocket"></i> <span>Projects</span> </div>
-        <div class="nav-item" onclick="showPage('education', this)"> <i class="fas fa-user-graduate"></i> <span>Education</span> </div>
-        <div class="nav-item" onclick="showPage('skills', this)"> <i class="fas fa-chart-line"></i> <span>Skills</span> </div>
-        <div class="nav-item" onclick="showPage('appointment', this)"> <i class="fas fa-calendar-check"></i> <span>Booking</span> </div>
-        <div class="nav-item" onclick="showPage('contact', this)"> <i class="fas fa-map-marked-alt"></i> <span>Contact</span> </div>
+        <div>
+            <!-- Brand Logo -->
+            <div class="brand-logo-container" title="HelloIstiak">
+                <img src="1000323192.png" alt="HelloIstiak Logo">
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="nav-menu">
+                <div class="nav-item active" onclick="showPage('home', this)"> <i class="fas fa-home"></i> <span>Home</span> </div>
+                <div class="nav-item" onclick="showPage('my-project', this)"> <i class="fas fa-layer-group"></i> <span>My Project</span> </div>
+                <div class="nav-item" onclick="showPage('it-courses', this)"> <i class="fas fa-graduation-cap"></i> <span>IT Courses</span> </div>
+                <div class="nav-item" onclick="showPage('e-tech-shop', this)"> <i class="fas fa-shopping-bag"></i> <span>E-tech Shop</span> </div>
+                <div class="nav-item" onclick="showPage('education', this)"> <i class="fas fa-university"></i> <span>Education</span> </div>
+                <div class="nav-item" onclick="showPage('contact-me', this)"> <i class="fas fa-envelope-open-text"></i> <span>Contact Me</span> </div>
+            </div>
+        </div>
         
-        <div class="theme-btn" onclick="toggleTheme()"> <i class="fas fa-adjust" id="t-icon"></i> </div>
+        <!-- Round Theme Toggle Button -->
+        <div class="round-theme-btn" onclick="toggleTheme()" title="Switch Light/Dark Mode">
+            <i class="fas fa-sun" id="t-icon"></i>
+        </div>
     </nav>
 
     <!-- Profile Side -->
@@ -175,45 +478,172 @@
         <div class="typing-container"><span id="type-text"></span></div>
         
         <div class="social-box">
-            <a href="https://www.facebook.com/mdistiakislamamin" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/istiakislam_" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://pinterest.com/iforistiak" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-            <a href="https://linkedin.com/thistiak" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://t.me/iforistiak" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-            <a href="https://github.com/iforistiak" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.facebook.com/mdistiakislamamin" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/istiakislam_" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://pinterest.com/iforistiak" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://linkedin.com/thistiak" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://t.me/iforistiak" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://github.com/iforistiak" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
         </div>
 
-        <a href="https://wa.me/+8801640092412" class="hire-btn">LETS TALK <i class="fas fa-comments"></i></a>
+        <a href="https://wa.me/+8801640092412" class="hire-btn" target="_blank">LETS TALK <i class="fas fa-comments"></i></a>
     </aside>
 
-    <!-- Main Content Container -->
+      <!-- Main Content Container -->
     <main class="content-container">
         
-        <!-- Home -->
+        <!-- Home Page -->
         <section id="home" class="page-section active">
-            <h1 style="font-size: 3rem; margin-bottom: 20px; color: var(--blue);">Creative <span style="color: var(--green);">Mind,</span> <br>Expert <span style="color: var(--red);">Solutions.</span></h1>
-            <div style="background: var(--card-bg); padding: 35px; border-radius: 25px; border-left: 8px solid var(--blue); box-shadow: var(--shadow);">
-                <p>আইটি এবং ওয়েব টেকনোলজির এই দুনিয়ায় আমি আপনার আইডিয়াগুলোকে বাস্তবে রূপ দিতে কাজ করি। নিচে আমার ক্যারিয়ার এবং দক্ষতাগুলো দেখুন।</p>
+            <h1 style="font-size: 2.8rem; margin-bottom: 20px; color: var(--blue);">Creative <span style="color: var(--green);">Mind,</span> <br>Expert <span style="color: var(--red);">Solutions.</span></h1>
+            <div style="background: var(--card-bg); padding: 32px; border-radius: 22px; border-left: 8px solid var(--blue); box-shadow: var(--shadow);">
+                <p style="font-size: 15px; line-height: 1.8;">আইটি এবং ওয়েব টেকনোলজির এই দুনিয়ায় আমি আপনার আইডিয়াগুলোকে বাস্তবে রূপ দিতে কাজ করি। এই ওয়েবসাইটে আমার কাজ, সার্ভিস, আইটি কোর্স এবং প্রজেক্টগুলো সম্পর্কে দেখতে পারবেন।</p>
             </div>
         </section>
 
-        <!-- Projects -->
-        <section id="projects" class="page-section">
-            <h2 style="margin-bottom: 30px; border-bottom: 3px solid var(--red); display: inline-block;">Latest Work</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-img"></div>
-                    <div class="project-details">
-                        <h3>Project One</h3>
-                        <p>একটি আধুনিক ওয়েব ডিজাইন প্রজেক্ট।</p>
+        <!-- MY PROJECT PAGE (Merged Projects & Skills) -->
+        <section id="my-project" class="page-section">
+            <div class="section-block">
+                <h2 style="margin-bottom: 25px; border-bottom: 3px solid var(--red); display: inline-block;">Featured Work & Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-img"></div>
+                        <div class="project-details">
+                            <h3>E-Commerce Web Portal</h3>
+                            <p style="font-size: 13px; color: var(--text-muted); margin-top: 5px;">একটি আধুনিক ওয়েব অ্যাপলিকেশন প্রজেক্ট।</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500');"></div>
+                        <div class="project-details">
+                            <h3>IT Support Automation</h3>
+                            <p style="font-size: 13px; color: var(--text-muted); margin-top: 5px;">সফটওয়্যার এবং নেটওয়ার্ক অটোমেশন সিস্টেম।</p>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img"></div>
-                    <div class="project-details">
-                        <h3>Project Two</h3>
-                        <p>সফটওয়্যার অটোমেশন প্রজেক্ট।</p>
+            </div>
+
+            <div class="section-block">
+                <h2 style="margin-bottom: 25px; border-bottom: 3px solid var(--green); display: inline-block;">Technical Skills & Proficiency</h2>
+                <div class="skill-item">
+                    <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>Social Media Handles</span><span>90%</span></div>
+                    <div class="progress-bar"><div class="progress-fill s-blue" data-percent="90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>IT Support Online & Offline</span><span>90%</span></div>
+                    <div class="progress-bar"><div class="progress-fill s-green" data-percent="90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>Computer Software & Hardware Setup</span><span>85%</span></div>
+                    <div class="progress-bar"><div class="progress-fill s-red" data-percent="85%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>E-commerce Management</span><span>80%</span></div>
+                    <div class="progress-bar"><div class="progress-fill s-blue" data-percent="80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>Administrator Management</span><span>95%</span></div>
+                    <div class="progress-bar"><div class="progress-fill s-green" data-percent="95%"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IT COURSES SECTION (NEW) -->
+        <section id="it-courses" class="page-section">
+            <h2 style="margin-bottom: 25px; border-bottom: 3px solid var(--blue); display: inline-block;">IT Classes & Mentorship Courses</h2>
+            <div class="course-grid">
+                
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500" class="course-img" alt="IT Course">
+                    <div class="course-body">
+                        <span class="course-badge">Live Class & Support</span>
+                        <h3 style="font-size: 16px; margin-bottom: 8px;">IT Support & Hardware Masterclass</h3>
+                        <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 15px;">
+                            Learn hands-on computer repair, networking basics, Linux/Windows setup, and remote IT troubleshooting.
+                        </p>
+                        <div class="course-btn-group">
+                            <a href="https://wa.me/+8801640092412?text=Hello%20Istiak,%20I%20want%20to%20enroll%20in%20IT%20Support%20Masterclass." target="_blank" class="course-btn btn-join">
+                                <i class="fas fa-chalkboard-teacher"></i> Enroll Class
+                            </a>
+                            <a href="https://drive.google.com/" target="_blank" class="course-btn btn-resource">
+                                <i class="fas fa-download"></i> Resources
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500" class="course-img" alt="Web Dev Course">
+                    <div class="course-body">
+                        <span class="course-badge" style="color: var(--green);">Practical Training</span>
+                        <h3 style="font-size: 16px; margin-bottom: 8px;">Web Development & E-commerce</h3>
+                        <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 15px;">
+                            Master HTML, CSS, JavaScript, responsive design, and e-commerce website management with real-world projects.
+                        </p>
+                        <div class="course-btn-group">
+                            <a href="https://wa.me/+8801640092412?text=Hello%20Istiak,%20I%20want%20to%20enroll%20in%20Web%20Development%20Course." target="_blank" class="course-btn btn-join">
+                                <i class="fas fa-chalkboard-teacher"></i> Enroll Class
+                            </a>
+                            <a href="https://drive.google.com/" target="_blank" class="course-btn btn-resource">
+                                <i class="fas fa-download"></i> Resources
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- E-TECH SHOP PAGE -->
+        <section id="e-tech-shop" class="page-section">
+            <h2 style="margin-bottom: 20px; border-bottom: 3px solid var(--blue); display: inline-block;">E-tech Shop & Services Catalog</h2>
+            
+            <div class="shop-header">
+                <div class="shop-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="shop-search-input" placeholder="Search products or services..." onkeyup="filterProducts()">
+                </div>
+            </div>
+
+            <div class="shop-categories">
+                <button class="cat-btn active" onclick="filterCategory('all', this)">All Items</button>
+                <button class="cat-btn" onclick="filterCategory('services', this)">IT Services</button>
+                <button class="cat-btn" onclick="filterCategory('courses', this)">IT Courses</button>
+                <button class="cat-btn" onclick="filterCategory('software', this)">Software Tools</button>
+            </div>
+
+            <div class="product-grid" id="product-container">
+                <div class="product-card" data-category="services" data-title="it support consulting setup">
+                    <div class="product-img-box">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500" alt="IT Service">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Premium IT Support Setup</div>
+                        <div class="product-desc">Full computer hardware/software configuration, remote & onsite IT setup support.</div>
+                        <div class="product-footer">
+                            <div class="product-price">৳ ১,৫০০</div>
+                            <a href="https://wa.me/+8801640092412?text=Hello%20Istiak,%20I%20want%20to%20order%20the%20'Premium%20IT%20Support%20Setup'%20service." target="_blank" class="buy-wa-btn">
+                                <i class="fab fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="courses" data-title="it professional course">
+                    <div class="product-img-box">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500" alt="IT Course">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">IT Specialist Course</div>
+                        <div class="product-desc">1-on-1 mentorship for Windows/Linux server admin, hardware troubleshooting & networking.</div>
+                        <div class="product-footer">
+                            <div class="product-price">৳ ৩,৫০০</div>
+                            <a href="https://wa.me/+8801640092412?text=Hello%20Istiak,%20I%20want%20to%20enroll%20in%20the%20'IT%20Specialist%20Course'." target="_blank" class="buy-wa-btn">
+                                <i class="fab fa-whatsapp"></i> Order
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -223,128 +653,100 @@
         <section id="education" class="page-section">
             <h2 style="margin-bottom: 30px; border-bottom: 3px solid var(--blue); display: inline-block;">Educational Background</h2>
             <div class="edu-card">
-                <span class="Institute Type">High School</span>
+                <span class="year">School</span>
                 <h3>Masjid Mission Academy School & College, Rajshahi</h3>
-                <p>Class - Play to Seven</p>
+                <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">Class - Play to Seven</p>
             </div>
             <div class="edu-card">
-                <span class="Institute Type">High School</span>
+                <span class="year">High School</span>
                 <h3>Rajshahi Lokenath High School, Rajshahi</h3>
-                <p>Class - Eight, Nine-Ten</p>
+                <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">Class - Eight, Nine-Ten</p>
             </div>
             <div class="edu-card">
-                <span class="Institute Type">College</span>
+                <span class="year">College</span>
                 <h3>Shahid Mamum Mahmud Police Line's School & College, Rajshahi</h3>
-                <p>Class - Eleven-Twelve</p>
+                <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">Class - Eleven-Twelve</p>
             </div>
             <div class="edu-card">
-                <span class="Institute Type">University</span>
-                <h3>Rajshahi Court College, Rajshahi (Under National University of Bangladesh)</h3>
-                <p>Class - Bachelor of Arts</p>
+                <span class="year">University</span>
+                <h3>Rajshahi Court College, Rajshahi (Under National University)</h3>
+                <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">Bachelor of Arts (BA)</p>
             </div>
-        </section>
+         </section>
+                 <!-- CONTACT ME PAGE (Merged Appointment Booking & Location) -->
+        <section id="contact-me" class="page-section">
+            <h2 style="margin-bottom: 25px; border-bottom: 3px solid var(--green); display: inline-block;">Contact & Book Consultation</h2>
+            
+            <div class="contact-merged-grid">
+                <!-- Left: Booking Form -->
+                <div class="info-card" style="border-top: 6px solid var(--green);">
+                    <h3 style="margin-bottom: 18px; color: var(--green);"><i class="fas fa-calendar-alt"></i> Book Appointment</h3>
+                    <form action="https://formspree.io/f/mqejyanr" method="POST">
+                        <div class="booking-row">
+                            <div class="booking-field">
+                                <label>Full Name</label>
+                                <input type="text" name="Name" placeholder="Your Full Name" required>
+                            </div>
+                            <div class="booking-field">
+                                <label>Email Address</label>
+                                <input type="email" name="Email" placeholder="Your Email Address" required>
+                            </div>
+                        </div>
+                        <div class="booking-row">
+                            <div class="booking-field">
+                                <label>Phone Number</label>
+                                <input type="tel" name="Phone" placeholder="Your Phone Number" required>
+                            </div>
+                            <div class="booking-field">
+                                <label>Select Service</label>
+                                <select name="Service" required>
+                                    <option value="" disabled selected>Choose service</option>
+                                    <option value="IT Support">IT Support & System Solutions</option>
+                                    <option value="Web Development">Web Development Consultation</option>
+                                    <option value="Graphics Design">Graphics Design & Identity</option>
+                                    <option value="IT Training">IT Training & Solutions</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="booking-row">
+                            <div class="booking-field">
+                                <label>Appointment Date</label>
+                                <input type="date" name="Date" required>
+                            </div>
+                            <div class="booking-field">
+                                <label>Preferred Time</label>
+                                <input type="time" name="Time" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="booking-btn">Submit Request <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
 
-        <!-- Skills -->
-        <section id="skills" class="page-section">
-            <h2 style="margin-bottom: 30px; border-bottom: 3px solid var(--green); display: inline-block;">Technical Expertise</h2>
-            <div class="skill-item">
-                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>Social Media Handles</span><span>90%</span></div>
-                <div class="progress-bar"><div class="progress-fill s-blue" data-percent="90%"></div></div>
-            </div>
-            <div class="skill-item">
-                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>IT Support Online & Offline</span><span>90%</span></div>
-                <div class="progress-bar"><div class="progress-fill s-green" data-percent="90%"></div></div>
-            </div>
-            <div class="skill-item">
-                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>Computer Software & Hardware Setup</span><span>85%</span></div>
-                <div class="progress-bar"><div class="progress-fill s-red" data-percent="85%"></div></div>
-            </div>
-            <div class="skill-item">
-                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>E-commerce Management</span><span>80%</span></div>
-                <div class="progress-bar"><div class="progress-fill s-blue" data-percent="80%"></div></div>
-            </div>
-            <div class="skill-item">
-                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>Administrator Management</span><span>95%</span></div>
-                <div class="progress-bar"><div class="progress-fill s-green" data-percent="95%"></div></div>
-            </div>
-            <div class="skill-item">
-                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>Team Work & Collaboration</span><span>80%</span></div>
-                <div class="progress-bar"><div class="progress-fill s-red" data-percent="80%"></div></div>
-            </div>
-            <div class="skill-item">
-                <div style="display: flex; justify-content: space-between; font-weight: 700;"><span>Mentorship in IT Course</span><span>85%</span></div>
-                <div class="progress-bar"><div class="progress-fill s-blue" data-percent="85%"></div></div>
-            </div>
-        </section>
-
-        <!-- Appointment / Booking Page -->
-        <section id="appointment" class="page-section">
-            <h2 style="margin-bottom: 30px; border-bottom: 3px solid var(--green); display: inline-block;">Book an Appointment</h2>
-            <div class="booking-card">
-                <form action="https://formspree.io/f/mqejyanr" method="POST">
-                    <div class="booking-row">
-                        <div class="booking-field">
-                            <label>Full Name</label>
-                            <input type="text" name="Name" placeholder="Your Full Name" required>
-                        </div>
-                        <div class="booking-field">
-                            <label>Email Address</label>
-                            <input type="email" name="Email" placeholder="Your Email Address" required>
-                        </div>
-                        <div class="booking-field">
-                            <label>Phone Number</label>
-                            <input type="tel" name="Phone" placeholder="Your Phone Number" required>
-                        </div>
+                <!-- Right: Map & Direct Info -->
+                <div>
+                    <div class="info-card" style="border-top: 6px solid var(--blue); margin-bottom: 20px;">
+                        <h3 style="margin-bottom: 12px; color: var(--blue);"><i class="fas fa-address-card"></i> Direct Contact</h3>
+                        <p style="margin-bottom: 8px; font-size: 13.5px;"><i class="fas fa-phone-alt" style="color: var(--green); margin-right: 8px;"></i> +880 1640-092412</p>
+                        <p style="font-size: 13.5px;"><i class="fas fa-map-marker-alt" style="color: var(--red); margin-right: 8px;"></i> Rajshahi, Bangladesh</p>
                     </div>
-                    <div class="booking-row">
-                        <div class="booking-field">
-                            <label>Select Service</label>
-                            <select name="Service" required>
-                                <option value="" disabled selected>Choose a service</option>
-                                <option value="IT Support">IT Support & System Solutions</option>
-                                <option value="Web Development">Web Development Consultation</option>
-                                <option value="Graphics Design">Graphics Design & Brand Identity</option>
-                                <option value="Digital Marketing">Digital Marketing and Benefits</option>
-                                <option value="Business Growth"> IT Training & Solutions</option>
-                            </select>
-                        </div>
-                        <div class="booking-field">
-                            <label>Appointment Date</label>
-                            <input type="date" name="Date" required>
-                        </div>
-                        <div class="booking-field">
-                            <label>Preferred Time</label>
-                            <input type="time" name="Time" required>
-                        </div>
-                    </div>
-                    <button type="submit" class="booking-btn">Submit Appointment Request <i class="fas fa-paper-plane"></i></button>
-                </form>
-            </div>
-        </section>
 
-        <!-- Contact -->
-        <section id="contact" class="page-section">
-            <h2 style="margin-bottom: 30px;">Contact & Location</h2>
-            <div style="background: var(--card-bg); padding: 20px; border-radius: 20px; box-shadow: var(--shadow);">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116334.5666922967!2d88.52924409322305!3d24.378121511211756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fbefd0a551957f%3A0x44c0d0bc4309f8c9!2sRajshahi!5e0!3m2!1sen!2sbd!4v1712850000000!5m2!1sen!2sbd" width="100%" height="300" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"></iframe>
+                    <div style="background: var(--card-bg); padding: 15px; border-radius: 20px; box-shadow: var(--shadow); border: 1px solid var(--glass-border);">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116334.5666922967!2d88.52924409322305!3d24.378121511211756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fbefd0a551957f%3A0x44c0d0bc4309f8c9!2sRajshahi!5e0!3m2!1sen!2sbd!4v1712850000000!5m2!1sen!2sbd" width="100%" height="220" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
             </div>
         </section>
 
     </main>
 
     <script>
-        // জাভাস্ক্রিপ্ট ফাংশনগুলোকে গ্লোবাল স্কোপে রাখছি যাতে ইনলাইন onclick হ্যান্ডলারগুলো সাথে সাথে কাজ করে।
-        
+        // Navigation Handler
         function showPage(id, el) {
             var sections = document.querySelectorAll('.page-section');
-            sections.forEach(function(s) {
-                s.classList.remove('active');
-            });
+            sections.forEach(function(s) { s.classList.remove('active'); });
 
             var navs = document.querySelectorAll('.nav-item');
-            navs.forEach(function(n) {
-                n.classList.remove('active');
-            });
+            navs.forEach(function(n) { n.classList.remove('active'); });
 
             var target = document.getElementById(id);
             if(target && el) {
@@ -352,13 +754,12 @@
                 el.classList.add('active');
             }
 
-            // প্রোগ্রেস বার হ্যান্ডলিং
-            if(id === 'skills') {
+            if(id === 'my-project') {
                 setTimeout(function() {
                     document.querySelectorAll('.progress-fill').forEach(function(p) {
                         p.style.width = p.getAttribute('data-percent');
                     });
-                }, 300);
+                }, 250);
             } else {
                 document.querySelectorAll('.progress-fill').forEach(function(p) {
                     p.style.width = '0';
@@ -369,6 +770,7 @@
             if(contentContainer) contentContainer.scrollTop = 0;
         }
 
+        // Circular Day / Night Theme Switcher
         function toggleTheme() {
             var b = document.body;
             var i = document.getElementById("t-icon");
@@ -377,14 +779,14 @@
             var isDark = b.getAttribute("data-theme") === "dark";
             if (isDark) {
                 b.setAttribute("data-theme", "light");
-                i.className = "fas fa-adjust";
+                i.className = "fas fa-sun";
             } else {
                 b.setAttribute("data-theme", "dark");
-                i.className = "fas fa-sun";
+                i.className = "fas fa-moon";
             }
         }
 
-        // টাইপিং ইফেক্ট স্ক্রিপ্ট
+        // Typing Effect Script
         var txt = ["IT Professional", "IT Course Instructor", "Graphics Designer", "IT Support Administrator"];
         var r=0, c=0, del=false;
         function type() {
@@ -398,9 +800,40 @@
             
             if(!del && c === curr.length) { del=true; setTimeout(type, 1500); }
             else if(del && c === 0) { del=false; r = (r+1)%txt.length; setTimeout(type, 500); }
-            else { setTimeout(type, del ? 50 : 120); }
+            else { setTimeout(type, del ? 50 : 100); }
         }
         
+        // E-tech Shop Filtering
+        function filterCategory(cat, btn) {
+            var btns = document.querySelectorAll('.cat-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            var products = document.querySelectorAll('.product-card');
+            products.forEach(p => {
+                if (cat === 'all' || p.getAttribute('data-category') === cat) {
+                    p.style.display = 'flex';
+                } else {
+                    p.style.display = 'none';
+                }
+            });
+        }
+
+        function filterProducts() {
+            var query = document.getElementById('shop-search-input').value.toLowerCase().trim();
+            var products = document.querySelectorAll('.product-card');
+
+            products.forEach(p => {
+                var title = p.getAttribute('data-title') || '';
+                if (title.includes(query)) {
+                    p.style.display = 'flex';
+                } else {
+                    p.style.display = 'none';
+                }
+            });
+        }
+
         document.addEventListener("DOMContentLoaded", type);
     </script>
-</body
+</body>
+</html>
