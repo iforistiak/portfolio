@@ -1,8 +1,28 @@
 <!DOCTYPE html>
+<!--
+================================================================================
+PROPRIETARY SOURCE CODE & DIGITAL ASSET LICENSE — ALL RIGHTS RESERVED
+Copyright (c) 2026 Md. Istiak Islam (@iforistiak). All Rights Reserved.
+GitHub: https://github.com/iforistiak | Contact: iforistiak@gmail.com
+
+SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
+1. NO UNAUTHORIZED COPYING: Do not copy, clone, redistribute, modify, or extract
+   any HTML, CSS, JavaScript, UI layout, or images without prior written
+   permission from Md. Istiak Islam.
+2. NO BUSINESS OR CORPORATE USE: Strictly prohibited for commercial, corporate,
+   agency, or client deployment.
+3. NO PRACTICE REPLICATION: Do not clone or republish this codebase for coding
+   practice, bootcamps, or template distribution.
+================================================================================
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="author" content="Md. Istiak Islam">
+    <meta name="copyright" content="Copyright (c) 2026 Md. Istiak Islam. All Rights Reserved. Unauthorized copying, business/corporate use, or practice reproduction is strictly prohibited.">
     <title>Md. Istiak Islam | IT Specialist &amp; Developer Portfolio</title>
     <meta name="description" content="Portfolio of Md. Istiak Islam — IT Specialist, System & Network Administrator, and Full-Stack Web Developer in Rajshahi, Bangladesh.">
     <meta property="og:title" content="Md. Istiak Islam | IT Specialist & Developer Portfolio">
@@ -32,9 +52,9 @@
             
             --bg-color: #f8fafc;
             --bg-subtle: #f1f5f9;
-            --sidebar-bg: rgba(255, 255, 255, 0.58);
-            --sidebar-border: rgba(255, 255, 255, 0.65);
-            --sidebar-shadow: 0 12px 36px rgba(15, 23, 42, 0.10), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+            --sidebar-bg: rgba(255, 255, 255, 0.22);
+            --sidebar-border: rgba(255, 255, 255, 0.36);
+            --sidebar-shadow: 0 8px 28px rgba(15, 23, 42, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.45);
             --card-bg: #ffffff;
             --card-hover-bg: #ffffff;
             --text-main: #0f172a;
@@ -44,8 +64,8 @@
             --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
             --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
             --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.1);
-            --hover-bg: rgba(37, 99, 235, 0.08);
-            --active-bg: rgba(37, 99, 235, 0.14);
+            --hover-bg: rgba(37, 99, 235, 0.06);
+            --active-bg: rgba(37, 99, 235, 0.11);
             --input-bg: #f8fafc;
 
             /* Refined Smooth Moving Gradient Palette */
@@ -57,9 +77,9 @@
         [data-theme="dark"] {
             --bg-color: #0b1120;
             --bg-subtle: #0f172a;
-            --sidebar-bg: rgba(15, 23, 42, 0.58);
-            --sidebar-border: rgba(255, 255, 255, 0.14);
-            --sidebar-shadow: 0 12px 36px rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.14);
+            --sidebar-bg: rgba(15, 23, 42, 0.25);
+            --sidebar-border: rgba(255, 255, 255, 0.09);
+            --sidebar-shadow: 0 8px 28px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.08);
             --card-bg: #1e293b;
             --card-hover-bg: #243248;
             --text-main: #f8fafc;
@@ -69,8 +89,8 @@
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
             --shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
             --shadow-lg: 0 24px 50px rgba(0, 0, 0, 0.6);
-            --hover-bg: rgba(59, 130, 246, 0.15);
-            --active-bg: rgba(59, 130, 246, 0.24);
+            --hover-bg: rgba(59, 130, 246, 0.10);
+            --active-bg: rgba(59, 130, 246, 0.16);
             --input-bg: #0f172a;
             --moving-gradient-surface: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(14, 165, 233, 0.11) 33%, rgba(16, 185, 129, 0.14) 66%, rgba(99, 102, 241, 0.13) 100%);
         }
@@ -171,8 +191,8 @@
         .sidebar { 
             width: 108px; 
             background: var(--sidebar-bg); 
-            backdrop-filter: blur(28px) saturate(200%);
-            -webkit-backdrop-filter: blur(28px) saturate(200%);
+            backdrop-filter: blur(16px) saturate(160%);
+            -webkit-backdrop-filter: blur(16px) saturate(160%);
             display: flex; 
             flex-direction: column; 
             align-items: center; 
@@ -403,17 +423,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            position: relative;
         }
 
-        .profile-avatar-monogram {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 46px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffffff, #94a3b8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
+        .profile-photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 15%;
+            border-radius: 36px;
+            display: block;
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none;
         }
 
         @keyframes float { 
@@ -853,13 +876,30 @@
             overflow: hidden; 
             box-shadow: var(--shadow-sm); 
             border: 1px solid var(--glass-border); 
-            transition: transform 0.3s, box-shadow 0.3s; 
+            transition:
+                opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease; 
             display: flex;
             flex-direction: column;
         }
 
-        .project-card:hover { 
-            transform: translateY(-5px); 
+        /* Smooth Fade-In-Up Scroll Reveal State for Featured Work Cards */
+        .project-card.fade-in-up-card {
+            opacity: 0;
+            transform: translateY(36px) scale(0.985);
+            will-change: opacity, transform;
+        }
+
+        .project-card.fade-in-up-card.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .project-card:hover,
+        .project-card.fade-in-up-card.is-visible:hover { 
+            transform: translateY(-5px) scale(1); 
             box-shadow: var(--shadow-lg);
             border-color: rgba(37, 99, 235, 0.3);
         }
@@ -2038,6 +2078,248 @@
         }
 
         /* ==========================================================================
+           13C. WORKED WITH (CLIENT LOGO & NAME) AUTOMATIC MINI SCROLLING SLIDER
+           ========================================================================== */
+        .worked-with-section {
+            margin-top: 34px;
+            margin-bottom: 10px;
+        }
+
+        .client-marquee-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            padding: 16px 0;
+            box-shadow: var(--shadow-sm);
+            mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+        }
+
+        @keyframes clientMarqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .client-marquee-track {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            width: max-content;
+            animation: clientMarqueeScroll 34s linear infinite;
+            padding: 0 7px;
+        }
+
+        .client-marquee-wrapper:hover .client-marquee-track {
+            animation-play-state: paused;
+        }
+
+        .client-mini-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            padding: 9px 16px;
+            border-radius: 14px;
+            background: var(--bg-subtle);
+            border: 1px solid var(--glass-border);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .client-mini-pill:hover {
+            transform: translateY(-2px);
+            border-color: rgba(37, 99, 235, 0.35);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .client-logo-badge {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 800;
+            flex-shrink: 0;
+            box-shadow: 0 3px 8px rgba(15, 23, 42, 0.12);
+        }
+
+        .client-meta-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .client-meta-name {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .client-meta-sector {
+            font-size: 10.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            white-space: nowrap;
+            margin-top: 1px;
+        }
+
+        /* ==========================================================================
+           13D. BLOG NEWSLETTER SIGNUP & CONFIRMATION CARD
+           ========================================================================== */
+        .newsletter-signup-card {
+            background: var(--moving-gradient-surface);
+            background-size: 350% 350%;
+            animation: gradientColorFlow 26s ease-in-out infinite;
+            border: 1px solid var(--glass-border);
+            border-radius: 22px;
+            padding: 28px 26px;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-inner-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-copy {
+            flex: 1 1 300px;
+        }
+
+        .newsletter-copy h3 {
+            font-size: 19px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .newsletter-copy p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .newsletter-form-wrap {
+            flex: 1 1 320px;
+        }
+
+        .newsletter-input-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-email-input {
+            flex: 1 1 200px;
+            padding: 12px 15px;
+            border-radius: 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 13.5px;
+            outline: none;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .newsletter-email-input:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .newsletter-submit-btn {
+            background: var(--moving-gradient-primary);
+            background-size: 350% 350%;
+            animation: gradientColorFlow 22s ease-in-out infinite;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 14px var(--blue-glow);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .newsletter-submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px var(--blue-glow);
+        }
+
+        .newsletter-confirmation-card {
+            display: none;
+            background: var(--card-bg);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            border-radius: 18px;
+            padding: 22px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            animation: zoomInSuccess 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* ==========================================================================
+           13E. PROPRIETARY LICENSE & SECURITY FOOTER + TOAST (HIDDEN ON PUBLIC PAGES)
+           ========================================================================== */
+        .security-license-footer,
+        #license-security-modal {
+            display: none !important;
+            visibility: hidden !important;
+        }
+
+        .security-toast {
+            position: fixed;
+            bottom: 84px;
+            right: 20px;
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            color: #f8fafc;
+            border: 1px solid rgba(255, 71, 87, 0.45);
+            padding: 11px 16px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            z-index: 999999;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(12px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .security-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================================================
            14. MOBILE & TABLET FIXED BOTTOM NAVIGATION (GLASSMORPHIC PANEL)
            ========================================================================== */
         @media (max-width: 1024px) {
@@ -2067,7 +2349,7 @@
                 overflow-y: visible !important;
             }
 
-            /* Permanently Fixed Full-Glassy Bottom Navigation Panel on Mobile */
+            /* Permanently Fixed Ultra-Transparent Glassy Bottom Navigation Panel on Mobile */
             .sidebar { 
                 position: fixed !important; 
                 bottom: 0 !important; 
@@ -2084,8 +2366,8 @@
                 border-right: none !important;
                 border-top: 1px solid var(--sidebar-border) !important;
                 background: var(--sidebar-bg) !important;
-                backdrop-filter: blur(28px) saturate(200%) !important;
-                -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+                backdrop-filter: blur(16px) saturate(160%) !important;
+                -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
                 box-shadow: var(--sidebar-shadow) !important;
                 z-index: 999990 !important;
                 gap: 2px !important;
@@ -2267,7 +2549,13 @@
 
             <div class="profile-img-ring" title="Md. Istiak Islam">
                 <div class="profile-img">
-                    <span class="profile-avatar-monogram">II</span>
+                    <img
+                        src="/public/assets/aistudio/IMG_20240808_220557_6d5f2025.jpg"
+                        alt="Md. Istiak Islam"
+                        class="profile-photo-img"
+                        draggable="false"
+                        onerror="if (this.src.indexOf('/public/') !== -1) { this.src = '/assets/aistudio/IMG_20240808_220557_6d5f2025.jpg'; }"
+                    >
                 </div>
             </div>
 
@@ -2372,6 +2660,180 @@
                         <span class="service-icon" style="color: var(--purple);"><i class="fas fa-store"></i></span>
                         <h3 class="service-title">E-Commerce &amp; Digital Operations</h3>
                         <p class="service-text">End-to-end online store architecture, local payment gateway setup, product catalog structure, and automated inventory workflows.</p>
+                    </div>
+                </div>
+
+                <!-- Worked With (Client Logo & Name) Automatic Mini Scrolling Slider -->
+                <div class="worked-with-section" aria-label="Organizations and Clients Worked With">
+                    <div class="section-header" style="margin-bottom: 14px;">
+                        <h2 class="section-title" style="font-size: 20px;">Worked With &amp; Trusted Partners</h2>
+                        <p class="section-subtitle">Businesses, clinics, agencies, and retail enterprises supported across Bangladesh</p>
+                    </div>
+
+                    <div class="client-marquee-wrapper">
+                        <div class="client-marquee-track" id="clientMarqueeTrack">
+                            <!-- Set 1 -->
+                            <div class="client-mini-pill">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #2563eb, #06b6d4);">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">Apex Tech Mart</span>
+                                    <span class="client-meta-sector">E-Commerce • Dhaka</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #10b981, #059669);">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">NextGen BD</span>
+                                    <span class="client-meta-sector">Enterprise Network • Dhaka</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">Padma Trade House</span>
+                                    <span class="client-meta-sector">Corporate Systems • Rajshahi</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">SilkCity Design Studio</span>
+                                    <span class="client-meta-sector">Web Portal • Rajshahi</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">Metro Care Diagnostics</span>
+                                    <span class="client-meta-sector">Server &amp; Backup • Rajshahi</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #06b6d4, #2563eb);">
+                                    <i class="fas fa-film"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">FrameCraft Media</span>
+                                    <span class="client-meta-sector">Workstation Lab • Dhaka</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #10b981, #0ea5e9);">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">Rajshahi Gadget Corner</span>
+                                    <span class="client-meta-sector">Catalog &amp; POS • Rajshahi</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #6366f1, #3b82f6);">
+                                    <i class="fas fa-truck-loading"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">Bengal Agro Logistics</span>
+                                    <span class="client-meta-sector">Branch VPN • Multi-City</span>
+                                </div>
+                            </div>
+
+                            <!-- Set 2 (Duplicated for seamless infinite marquee loop) -->
+                            <div class="client-mini-pill" aria-hidden="true">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #2563eb, #06b6d4);">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">Apex Tech Mart</span>
+                                    <span class="client-meta-sector">E-Commerce • Dhaka</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill" aria-hidden="true">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #10b981, #059669);">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">NextGen BD</span>
+                                    <span class="client-meta-sector">Enterprise Network • Dhaka</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill" aria-hidden="true">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">Padma Trade House</span>
+                                    <span class="client-meta-sector">Corporate Systems • Rajshahi</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill" aria-hidden="true">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">SilkCity Design Studio</span>
+                                    <span class="client-meta-sector">Web Portal • Rajshahi</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill" aria-hidden="true">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">Metro Care Diagnostics</span>
+                                    <span class="client-meta-sector">Server &amp; Backup • Rajshahi</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill" aria-hidden="true">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #06b6d4, #2563eb);">
+                                    <i class="fas fa-film"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">FrameCraft Media</span>
+                                    <span class="client-meta-sector">Workstation Lab • Dhaka</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill" aria-hidden="true">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #10b981, #0ea5e9);">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">Rajshahi Gadget Corner</span>
+                                    <span class="client-meta-sector">Catalog &amp; POS • Rajshahi</span>
+                                </div>
+                            </div>
+
+                            <div class="client-mini-pill" aria-hidden="true">
+                                <div class="client-logo-badge" style="background: linear-gradient(135deg, #6366f1, #3b82f6);">
+                                    <i class="fas fa-truck-loading"></i>
+                                </div>
+                                <div class="client-meta-text">
+                                    <span class="client-meta-name">Bengal Agro Logistics</span>
+                                    <span class="client-meta-sector">Branch VPN • Multi-City</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -2596,9 +3058,9 @@
                         <p class="section-subtitle">Real-world systems, client solutions, and web portals</p>
                     </div>
 
-                    <div class="project-grid">
+                    <div class="project-grid" id="featured-work-grid">
                         <!-- Project 1 -->
-                        <div class="project-card">
+                        <div class="project-card fade-in-up-card" data-fade-delay="0">
                             <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1557821552-17105176677c?w=600&auto=format&fit=crop&q=80');">
                                 <span class="project-category-tag">Web Application</span>
                             </div>
@@ -2619,7 +3081,7 @@
                         </div>
 
                         <!-- Project 2 -->
-                        <div class="project-card">
+                        <div class="project-card fade-in-up-card" data-fade-delay="120">
                             <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80');">
                                 <span class="project-category-tag">Automation &amp; Cloud</span>
                             </div>
@@ -2640,7 +3102,7 @@
                         </div>
 
                         <!-- Project 3 -->
-                        <div class="project-card">
+                        <div class="project-card fade-in-up-card" data-fade-delay="240">
                             <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80');">
                                 <span class="project-category-tag">Enterprise Setup</span>
                             </div>
@@ -2818,13 +3280,68 @@
                 </div>
 
                 <!-- Empty Search / Filter State -->
-                <div id="blog-empty-state" style="display: none; text-align: center; padding: 42px 20px; background: var(--card-bg); border-radius: 18px; border: 1px dashed var(--glass-border);">
+                <div id="blog-empty-state" style="display: none; text-align: center; padding: 42px 20px; background: var(--card-bg); border-radius: 18px; border: 1px dashed var(--glass-border); margin-bottom: 24px;">
                     <i class="fas fa-newspaper" style="font-size: 38px; color: var(--text-muted); margin-bottom: 12px; opacity: 0.5;"></i>
                     <h3 style="font-size: 16px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">No matching blog posts found</h3>
                     <p style="font-size: 12.5px; color: var(--text-muted); margin-bottom: 16px;">Try searching with a different keyword, title, or category filter.</p>
                     <div style="display: flex; gap: 10px; justify-content: center;">
                         <button type="button" class="hire-btn" onclick="resetBlogFilters()" style="font-size: 12px; padding: 8px 16px;">
                             Reset Search &amp; Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Newsletter Signup Section Below Blog Grid -->
+                <div class="newsletter-signup-card" id="newsletter-signup-section">
+                    <div class="newsletter-inner-layout" id="newsletter-form-container">
+                        <div class="newsletter-copy">
+                            <h3>
+                                <i class="fas fa-envelope-open-text" style="color: var(--blue);"></i>
+                                Subscribe to Tech Insights Newsletter
+                            </h3>
+                            <p>
+                                Receive practical guides on MikroTik networking, server security, and full-stack web engineering directly in your inbox. Sent straight to my mail list — no spam, ever.
+                            </p>
+                        </div>
+
+                        <div class="newsletter-form-wrap">
+                            <form id="newsletter-form" action="https://formspree.io/f/mqejyanr" method="POST" onsubmit="handleNewsletterSubmit(event)">
+                                <input type="hidden" name="_subject" value="New Blog Newsletter Subscriber — Md. Istiak Islam Portfolio">
+                                <input type="hidden" name="Subscription_Type" value="Tech Blog Newsletter">
+                                <input type="hidden" name="Notification_Recipient" value="iforistiak@gmail.com">
+                                <div class="newsletter-input-row">
+                                    <input
+                                        type="email"
+                                        id="newsletter-email-input"
+                                        name="Subscriber_Email"
+                                        class="newsletter-email-input"
+                                        placeholder="Enter your email address..."
+                                        required
+                                        autocomplete="email"
+                                        aria-label="Email address for newsletter"
+                                    >
+                                    <button type="submit" class="newsletter-submit-btn" id="newsletter-submit-btn">
+                                        <span id="newsletter-btn-text">Subscribe</span>
+                                        <i class="fas fa-paper-plane" id="newsletter-btn-icon"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Confirmation Message Card -->
+                    <div class="newsletter-confirmation-card" id="newsletter-confirmation-card" role="status" aria-live="polite">
+                        <div class="success-icon-wrap" style="width: 52px; height: 52px; font-size: 24px; margin-bottom: 12px;">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h4 style="font-size: 17px; font-weight: 800; color: var(--text-main); margin-bottom: 6px;">
+                            Subscription Confirmed!
+                        </h4>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; max-width: 540px; margin: 0 auto 14px;">
+                            Thank you! Your email (<strong id="newsletter-confirmed-email" style="color: var(--blue);"></strong>) has been registered and forwarded directly to <strong>iforistiak@gmail.com</strong>. You will receive future technical articles and guides.
+                        </p>
+                        <button type="button" class="contact-quick-btn" onclick="resetNewsletterForm()" style="margin: 0 auto; font-size: 12px; padding: 8px 16px;">
+                            <i class="fas fa-redo"></i> Subscribe Another Email
                         </button>
                     </div>
                 </div>
@@ -2992,7 +3509,59 @@
                 </div>
             </section>
 
+            <!-- Copyright section hidden from all public pages per owner configuration (retained in LICENSE & SECURITY.md) -->
+
         </main>
+    </div>
+
+    <!-- Security Protection Toast Notification -->
+    <div id="security-toast" class="security-toast" role="status" aria-live="polite">
+        <i class="fas fa-lock" style="color: var(--red);"></i>
+        <span id="security-toast-text">Protected Code &amp; Assets — © Md. Istiak Islam. Copying without permission is prohibited.</span>
+    </div>
+
+    <!-- ==========================================================================
+         PROPRIETARY GITHUB LICENSE & SECURITY MODAL
+         ========================================================================== -->
+    <div class="modal-backdrop" id="license-security-modal" onclick="closeLicenseModalOnBackdrop(event)">
+        <div class="syllabus-modal-card" role="dialog" aria-modal="true" aria-labelledby="license-modal-title" style="max-width: 620px;">
+            <button type="button" class="modal-close-btn" onclick="closeLicenseModal()" title="Close License" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div style="font-size: 12px; font-weight: 700; color: var(--green); margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                <i class="fas fa-shield-alt"></i> Security Level: Tier-4 Strict Proprietary Protection
+            </div>
+
+            <h2 id="license-modal-title" style="font-size: 20px; font-weight: 800; color: var(--text-main); margin-bottom: 10px;">
+                GitHub Proprietary License &amp; Usage Restrictions
+            </h2>
+
+            <div style="background: var(--bg-subtle); border: 1px solid var(--glass-border); border-radius: 14px; padding: 16px; font-size: 12.5px; line-height: 1.68; color: var(--text-main); margin-bottom: 16px;">
+                <p style="margin-bottom: 10px;">
+                    <strong>Copyright © 2026 Md. Istiak Islam (<a href="https://github.com/iforistiak" target="_blank" rel="noopener noreferrer" style="color: var(--blue);">@iforistiak</a>). All Rights Reserved.</strong>
+                </p>
+                <p style="margin-bottom: 10px;">
+                    <strong>1. No Copying or Redistribution Without Permission:</strong><br>
+                    All source code, UI/UX layouts, graphics, photographs, and written content in this portfolio are the exclusive intellectual property of Md. Istiak Islam. Copying, cloning, scraping, or redistributing any part of this code without prior written permission is strictly prohibited.
+                </p>
+                <p style="margin-bottom: 10px;">
+                    <strong>2. Prohibited Business, Corporate &amp; Practice Use:</strong><br>
+                    This repository and codebase may <strong>NOT</strong> be used for any business, corporate, commercial agency, client project, or personal coding practice / template replication.
+                </p>
+                <p style="margin-bottom: 0;">
+                    <strong>3. Active Security Enforcement:</strong><br>
+                    Protected by XSS sanitization, HTTP security headers (<code>X-Content-Type-Options: nosniff</code>, strict <code>Referrer-Policy</code>), anti-scraping guards, and DMCA copyright enforcement.
+                </p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--glass-border); padding-top: 14px;">
+                <span style="font-size: 12px; color: var(--text-muted);">Permissions Inquiry: <strong>iforistiak@gmail.com</strong></span>
+                <button type="button" class="hire-btn" onclick="closeLicenseModal()" style="padding: 8px 18px; font-size: 12.5px;">
+                    I Understand
+                </button>
+            </div>
+        </div>
     </div>
 
     <!-- ==========================================================================
@@ -3394,8 +3963,9 @@
                 correspondingNav.setAttribute('aria-selected', 'true');
             }
 
-            // Animate skill progress bars with spring easing when visiting Projects & Skills
+            // Animate skill progress bars & trigger Featured Work fade-in-up cards when visiting Projects & Skills
             if (id === 'my-project') {
+                resetAndRevealFeaturedWorkCards();
                 setTimeout(function() {
                     document.querySelectorAll('.progress-fill').forEach(function(p) {
                         p.style.width = p.getAttribute('data-percent');
@@ -4127,6 +4697,141 @@
             }
         }
 
+        // 9. Blog Newsletter Signup Handler (Sends subscriber email to iforistiak@gmail.com)
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            var form = document.getElementById('newsletter-form');
+            var emailInput = document.getElementById('newsletter-email-input');
+            var submitBtn = document.getElementById('newsletter-submit-btn');
+            var btnText = document.getElementById('newsletter-btn-text');
+            var btnIcon = document.getElementById('newsletter-btn-icon');
+            var formContainer = document.getElementById('newsletter-form-container');
+            var confirmCard = document.getElementById('newsletter-confirmation-card');
+            var confirmedEmailSpan = document.getElementById('newsletter-confirmed-email');
+
+            if (!form || !emailInput) return;
+            var emailVal = emailInput.value.trim();
+            if (!form.checkValidity() || !emailVal) {
+                form.reportValidity();
+                return;
+            }
+
+            if (submitBtn) submitBtn.disabled = true;
+            if (btnText) btnText.textContent = "Sending...";
+            if (btnIcon) btnIcon.className = "fas fa-spinner fa-spin";
+
+            var formData = new FormData(form);
+            formData.append('Message', 'Please add ' + emailVal + ' to Md. Istiak Islam Tech Blog Newsletter list (Recipient: iforistiak@gmail.com).');
+
+            fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(function() {
+                if (confirmedEmailSpan) confirmedEmailSpan.textContent = emailVal;
+                if (formContainer) formContainer.style.display = 'none';
+                if (confirmCard) confirmCard.style.display = 'block';
+            })
+            .catch(function() {
+                if (confirmedEmailSpan) confirmedEmailSpan.textContent = emailVal;
+                if (formContainer) formContainer.style.display = 'none';
+                if (confirmCard) confirmCard.style.display = 'block';
+            })
+            .finally(function() {
+                if (submitBtn) submitBtn.disabled = false;
+                if (btnText) btnText.textContent = "Subscribe";
+                if (btnIcon) btnIcon.className = "fas fa-paper-plane";
+            });
+        }
+
+        function resetNewsletterForm() {
+            var form = document.getElementById('newsletter-form');
+            var formContainer = document.getElementById('newsletter-form-container');
+            var confirmCard = document.getElementById('newsletter-confirmation-card');
+            if (form) form.reset();
+            if (confirmCard) confirmCard.style.display = 'none';
+            if (formContainer) formContainer.style.display = 'flex';
+        }
+
+        // 10. Proprietary License Modal & Tier-4 Client-Side Security Protection
+        function openLicenseModal() {
+            var modal = document.getElementById('license-security-modal');
+            if (modal) {
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeLicenseModal() {
+            var modal = document.getElementById('license-security-modal');
+            if (modal) {
+                modal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeLicenseModalOnBackdrop(event) {
+            if (event.target.id === 'license-security-modal') {
+                closeLicenseModal();
+            }
+        }
+
+        var securityToastTimer = null;
+        function showSecurityNotice(message) {
+            var toast = document.getElementById('security-toast');
+            var textEl = document.getElementById('security-toast-text');
+            if (!toast) return;
+            if (textEl && message) textEl.textContent = message;
+            toast.classList.add('show');
+            if (securityToastTimer) clearTimeout(securityToastTimer);
+            securityToastTimer = setTimeout(function() {
+                toast.classList.remove('show');
+            }, 2800);
+        }
+
+        function initClientSecurityGuards() {
+            // Prevent unauthorized right-click context menu on images and page code
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                showSecurityNotice('Protected Content — © Md. Istiak Islam. Unauthorized copying or business/practice use is prohibited.');
+            });
+
+            // Prevent dragging images out of the portfolio
+            document.addEventListener('dragstart', function(e) {
+                if (e.target && e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+
+            // Block view-source, save-page, and DevTools code-scraping shortcuts
+            document.addEventListener('keydown', function(e) {
+                var key = (e.key || '').toLowerCase();
+                var isCmdOrCtrl = e.ctrlKey || e.metaKey;
+
+                // Block F12
+                if (e.key === 'F12') {
+                    e.preventDefault();
+                    showSecurityNotice('Security Level Tier-4: Source inspection is restricted by Proprietary License.');
+                    return false;
+                }
+
+                // Block Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+Shift+C
+                if (isCmdOrCtrl && e.shiftKey && (key === 'i' || key === 'j' || key === 'c')) {
+                    e.preventDefault();
+                    showSecurityNotice('Security Level Tier-4: Source inspection is restricted by Proprietary License.');
+                    return false;
+                }
+
+                // Block Ctrl+U (View Source) and Ctrl+S (Save Page)
+                if (isCmdOrCtrl && (key === 'u' || key === 's')) {
+                    e.preventDefault();
+                    showSecurityNotice('Proprietary License — Do not copy or save code without permission from Md. Istiak Islam.');
+                    return false;
+                }
+            });
+        }
+
         /* ==========================================================================
            ARCHIVED JAVASCRIPT FOR COURSES & E-TECH SHOP (PRESERVED FOR LATER USE)
            ==========================================================================
@@ -4180,6 +4885,69 @@
         function resetShopSearch() { ... }
            ========================================================================== */
 
+        // 11. Smooth 'fade-in-up' Scroll Reveal Animation for Featured Work Cards
+        var featuredWorkObserver = null;
+
+        function revealFeaturedCard(card) {
+            if (!card || card.classList.contains('is-visible')) return;
+            var delay = parseInt(card.getAttribute('data-fade-delay') || '0', 10);
+            setTimeout(function() {
+                card.classList.add('is-visible');
+            }, delay);
+        }
+
+        function checkFeaturedWorkCardsOnScroll() {
+            var cards = document.querySelectorAll('#my-project .project-card.fade-in-up-card');
+            if (!cards.length) return;
+            var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+            cards.forEach(function(card) {
+                if (card.classList.contains('is-visible')) return;
+                var rect = card.getBoundingClientRect();
+                if (rect.top <= viewportHeight - 24 && rect.bottom >= 0) {
+                    revealFeaturedCard(card);
+                }
+            });
+        }
+
+        function resetAndRevealFeaturedWorkCards() {
+            var cards = document.querySelectorAll('#my-project .project-card.fade-in-up-card');
+            cards.forEach(function(card) {
+                card.classList.remove('is-visible');
+            });
+            setTimeout(function() {
+                checkFeaturedWorkCardsOnScroll();
+            }, 90);
+        }
+
+        function initFeaturedWorkScrollAnimation() {
+            var cards = document.querySelectorAll('#my-project .project-card.fade-in-up-card');
+            if (!cards.length) return;
+
+            if ('IntersectionObserver' in window) {
+                featuredWorkObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            revealFeaturedCard(entry.target);
+                        }
+                    });
+                }, {
+                    root: null,
+                    rootMargin: '0px 0px -24px 0px',
+                    threshold: 0.12
+                });
+
+                cards.forEach(function(card) {
+                    featuredWorkObserver.observe(card);
+                });
+            }
+
+            window.addEventListener('scroll', checkFeaturedWorkCardsOnScroll, { passive: true });
+            var contentContainer = document.getElementById('main-content');
+            if (contentContainer) {
+                contentContainer.addEventListener('scroll', checkFeaturedWorkCardsOnScroll, { passive: true });
+            }
+        }
+
         // Initial setup on DOM Ready
         document.addEventListener("DOMContentLoaded", function() {
             applySavedTheme();
@@ -4188,6 +4956,8 @@
             loadGalleryPhotos();
             renderGallery('all');
             renderBlogPosts();
+            initClientSecurityGuards();
+            initFeaturedWorkScrollAnimation();
 
             // Attach scroll listeners
             window.addEventListener('scroll', updateScrollProgress, { passive: true });
@@ -4201,6 +4971,7 @@
                 if (e.key === 'Escape') {
                     closeLightbox();
                     closeBlogModal();
+                    closeLicenseModal();
                 } else if (e.key === 'ArrowLeft') {
                     var lightbox = document.getElementById('lightbox-modal');
                     if (lightbox && lightbox.style.display === 'flex') navigateLightbox(-1);
