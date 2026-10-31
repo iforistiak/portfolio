@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="miiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="100%" stop-color="#151e32"/>
+    </linearGradient>
+    <linearGradient id="miiRgbBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="miiWhiteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <!-- Squircle Base -->
+  <rect x="7" y="7" width="114" height="114" rx="30" fill="url(#miiBg)" stroke="url(#miiRgbBorder)" stroke-width="5.5"/>
+  <rect x="11" y="11" width="106" height="106" rx="26" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  
+  <!-- Architectural M -->
+  <path d="M 28 88 L 28 42 L 44 65 L 60 42 L 60 88" stroke="url(#miiWhiteGrad)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Modern Dual I Pillars -->
+  <line x1="77" y1="42" x2="77" y2="88" stroke="#38bdf8" stroke-width="7" stroke-linecap="round"/>
+  <line x1="97" y1="42" x2="97" y2="88" stroke="#60a5fa" stroke-width="7" stroke-linecap="round"/>
+  
+  <!-- Balanced Tri-Color RGB Jewel Accents -->
+  <circle cx="28" cy="31" r="4.5" fill="#ef4444"/>
+  <circle cx="77" cy="31" r="4.5" fill="#10b981"/>
+  <circle cx="97" cy="31" r="4.5" fill="#2563eb"/>
+  
+  <!-- Center Micro Tech Dot in M -->
+  <circle cx="44" cy="74" r="2.5" fill="#10b981"/>
+</svg>

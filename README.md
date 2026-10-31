@@ -1,7 +1,34 @@
-# Md. Istiak Islam — Official Portfolio
+# Md. Istiak Islam — Official Portfolio (React + TypeScript + Vite)
 
 **IT Specialist • System & Network Administrator • Full-Stack Web Developer**  
 📍 Rajshahi, Bangladesh | ✉️ [iforistiak@gmail.com](mailto:iforistiak@gmail.com)
+
+---
+
+## 🚀 Overview
+
+Modern portfolio web application rebuilt with **React 19**, **TypeScript**, and **Vite**, preserving the complete feature set, balanced RGB styling tokens, and interactive business logic of the original application:
+
+- **Single Page Navigation:** Clean tabs for Home, Projects & Skills, Photo Gallery & Albums, Tech Blog & Insights, Education, and Contact & Consultation Booking.
+- **Balanced RGB Theme & Dark Mode:** Day / Night theme switcher with instant zero-jump toggling and `localStorage` persistence.
+- **Dynamic Typewriter:** Smooth typewriter role cycling on the profile sidebar.
+- **Client & Partner Marquee:** Continuous infinite scrolling partner showcase.
+- **Testimonials Carousel:** Interactive client reviews with Bengali language typography support and smooth carousel scrolling.
+- **Interactive Photo Gallery:** Dynamic category filtering (Server Labs, Field Work, Milestones, Events) with counts and fullscreen Lightbox modal with keyboard navigation.
+- **Tech Blog & Insights:** Real-time search across titles, descriptions, categories, and keywords, reading modal, and newsletter subscription via Formspree.
+- **Consultation Booking:** Appointment scheduling form with date/time validation and Formspree integration.
+- **Tier-4 Client-Side Security:** Built-in safeguards preventing unauthorized asset extraction and source scraping with toast feedback.
+
+---
+
+## 🛠️ Tech Stack & Scripts
+
+- **Runtime:** Node.js, React 19, TypeScript
+- **Bundler:** Vite
+- **Development Server:** `npm run dev` (runs on `http://0.0.0.0:3000`)
+- **Type Checking & Linting:** `npm run lint`
+- **Production Build:** `npm run build`
+- **Preview:** `npm run preview`
 
 ---
 
