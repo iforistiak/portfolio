@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { clientPartners, testimonials } from '../data/portfolioData';
+import { clientPartners, testimonials, heroDescription, coreServices } from '../data/portfolioData';
 import { NavigationTab } from '../types';
 
 interface HomeSectionProps {
@@ -27,7 +27,7 @@ export const HomeSection: React.FC<HomeSectionProps> = ({ onNavigate }) => {
           Expert <span className="gradient-text-flow-alt">Solutions.</span>
         </h1>
         <p className="hero-desc">
-          Building resilient IT infrastructure, seamless network architectures, and high-performance web applications tailored for modern businesses. From precision system administration to custom digital platforms, I transform complex technical challenges into fast, secure, and dependable solutions that drive real-world growth.
+          {heroDescription}
         </p>
         <div className="hero-action-buttons">
           <button
@@ -35,7 +35,7 @@ export const HomeSection: React.FC<HomeSectionProps> = ({ onNavigate }) => {
             className="hire-btn"
             onClick={() => onNavigate('my-project')}
           >
-            <i className="fas fa-briefcase"></i> View Featured Work
+            <i className="fas fa-briefcase"></i> Explore Career &amp; Work
           </button>
           <button
             type="button"
@@ -79,40 +79,22 @@ export const HomeSection: React.FC<HomeSectionProps> = ({ onNavigate }) => {
         </div>
       </div>
 
-      {/* Core Specializations */}
+      {/* Core Specializations — Dedicated to Services Provided */}
       <div className="section-header">
         <h2 className="section-title">Core Specializations</h2>
-        <p className="section-subtitle">Professional technical services delivered to clients, teams, and growing Businesses.</p>
+        <p className="section-subtitle">Professional IT support, administration, consulting, CRM operations, and web development services I provide to clients and businesses.</p>
       </div>
 
-      <div className="services-highlight-grid">
-        <div className="service-highlight-card">
-          <span className="service-icon" style={{ color: 'var(--blue)' }}>
-            <i className="fas fa-network-wired"></i>
-          </span>
-          <h3 className="service-title">IT Support &amp; System Administration</h3>
-          <p className="service-text">
-            Hardware diagnostics, Windows &amp; Linux server configurations, MikroTik network security, and rapid remote or on-site technical troubleshooting.
-          </p>
-        </div>
-        <div className="service-highlight-card">
-          <span className="service-icon" style={{ color: 'var(--green)' }}>
-            <i className="fas fa-code"></i>
-          </span>
-          <h3 className="service-title">Web Design &amp; Full-Stack Development</h3>
-          <p className="service-text">
-            Fast, mobile-responsive, and search-optimized business websites and custom web portals engineered for speed, clarity, and reliability.
-          </p>
-        </div>
-        <div className="service-highlight-card">
-          <span className="service-icon" style={{ color: 'var(--purple)' }}>
-            <i className="fas fa-store"></i>
-          </span>
-          <h3 className="service-title">E-Commerce &amp; Digital Operations</h3>
-          <p className="service-text">
-            End-to-end online store architecture, local payment gateway setup, product catalog structure, and automated inventory workflows.
-          </p>
-        </div>
+      <div className="services-highlight-grid" id="core-services-grid">
+        {coreServices.map((service) => (
+          <div key={service.id} className="service-highlight-card">
+            <span className="service-icon" style={{ color: service.iconColor }}>
+              <i className={service.icon}></i>
+            </span>
+            <h3 className="service-title">{service.title}</h3>
+            <p className="service-text">{service.description}</p>
+          </div>
+        ))}
       </div>
 
       {/* Worked With (Client Logo & Name) Automatic Mini Scrolling Slider */}

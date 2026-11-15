@@ -69,6 +69,59 @@ export interface EducationItem {
   typeBadge: string;
   badgeIcon: string;
   institution: string;
+  classYear?: string;
   degree?: string;
   description: string;
+}
+
+export interface WorkExperience {
+  id: string;
+  company: string;
+  role: string;
+  period: string;
+  duration?: string;
+  isCurrent: boolean;
+  icon: string;
+  accentColor: string;
+  gradient: string;
+}
+
+export interface PersonalProfileInfo {
+  fullName: string;
+  headlineRoles: string[];
+  bio: string;
+  company: string;
+  companyCategory: string;
+  location: string;
+  hometown: string;
+  birthday: string;
+  college: string;
+  instagram: string;
+  openToWorkRoles: string[];
+}
+
+export interface InterestsData {
+  hobbies: string[];
+  tvShows: string[];
+  movies: string[];
+}
+
+export type ViewMode = 'box' | 'list';
+
+export interface CoreService {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  iconColor: string;
+}
+
+export interface WorkSkillHighlight {
+  id: string;
+  title: string;
+  category: string;
+  summary: string;
+  proficiency: number;
+  icon: string;
+  gradient: string;
 }

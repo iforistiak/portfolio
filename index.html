@@ -2564,6 +2564,510 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
             .nav-item span { font-size: 7.5px !important; }
             .nav-item i { font-size: 16px !important; }
         }
+
+        /* ==========================================================================
+           15. DECORATED PROFILE, WORK EXPERIENCE & PERSONAL DETAILS STYLES
+           ========================================================================== */
+        .profile-name {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .profile-verified-shield {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue);
+            flex-shrink: 0;
+        }
+
+        .typing-container {
+            min-height: 40px;
+            line-height: 1.35;
+            padding: 0 6px;
+        }
+
+        .profile-org-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .profile-org-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .profile-meta-sep {
+            color: var(--text-light);
+        }
+
+        .profile-bio-text {
+            font-size: 12px;
+            line-height: 1.55;
+            color: var(--text-muted);
+            margin: 0 0 16px;
+            padding: 10px 12px;
+            background: var(--bg-subtle);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .work-headline-banner {
+            background: var(--moving-gradient-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .work-headline-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .work-headline-identity h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-bottom: 5px;
+        }
+
+        .inline-verified-icon {
+            color: var(--blue);
+            font-size: 15px;
+        }
+
+        .work-headline-sub {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            line-height: 1.55;
+            max-width: 680px;
+        }
+
+        .work-headline-org-tag {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--blue);
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 6px 12px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .work-open-roles-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding-top: 12px;
+            border-top: 1px solid var(--glass-border);
+            font-size: 12.5px;
+        }
+
+        .work-open-label {
+            font-weight: 700;
+            color: var(--green);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .work-open-list {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .work-exp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 16px;
+        }
+
+        .work-exp-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            padding: 18px 20px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .work-exp-card:hover {
+            border-color: rgba(37, 99, 235, 0.32);
+            box-shadow: var(--shadow);
+        }
+
+        .work-exp-icon-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 17px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.14);
+        }
+
+        .work-exp-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .work-exp-header-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 3px;
+        }
+
+        .work-exp-company {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+
+        .work-exp-status-active {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--green);
+            flex-shrink: 0;
+        }
+
+        .work-exp-role {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 5px;
+            line-height: 1.35;
+        }
+
+        .work-exp-period {
+            font-size: 11.5px;
+            font-weight: 500;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .personal-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .personal-info-card {
+            margin-bottom: 0;
+        }
+
+        .personal-card-heading {
+            font-size: 16.5px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .personal-detail-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .personal-detail-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: var(--bg-subtle);
+            border: 1px solid var(--glass-border);
+        }
+
+        .pd-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 9px;
+            background: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+            border: 1px solid var(--glass-border);
+        }
+
+        .personal-detail-list li > div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pd-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .pd-value {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .interest-group {
+            padding: 12px 14px;
+            border-radius: 12px;
+            background: var(--bg-subtle);
+            border: 1px solid var(--glass-border);
+            margin-bottom: 12px;
+        }
+
+        .interest-group-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .interest-inline-items {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .home-skill-summary {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+            line-height: 1.55;
+            margin-top: 2px;
+        }
+
+        /* ==========================================================================
+           16. GALLERY & BLOG VIEW MODE SWITCHER (BOX VIEW & LIST VIEW)
+           ========================================================================== */
+        .blog-filter-view-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .view-mode-switcher {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px;
+            background: var(--bg-subtle);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .view-mode-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            padding: 6px 12px;
+            border-radius: 9px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: inherit;
+            white-space: nowrap;
+            transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .view-mode-btn:hover {
+            color: var(--blue);
+        }
+
+        .view-mode-btn.active {
+            background: var(--card-bg);
+            color: var(--blue);
+            border-color: rgba(37, 99, 235, 0.25);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .media-list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 30px;
+        }
+
+        .media-list-row-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 22px;
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--glass-border);
+            cursor: pointer;
+            transition: background-color 0.18s ease;
+            position: relative;
+        }
+
+        .media-list-row-card:last-child {
+            border-bottom: none;
+        }
+
+        .media-list-row-card:hover {
+            background: var(--hover-bg);
+        }
+
+        .media-list-thumb-wrap {
+            width: 96px;
+            height: 70px;
+            border-radius: 12px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: var(--bg-subtle);
+            border: 1px solid var(--glass-border);
+        }
+
+        .media-list-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .media-list-divider {
+            width: 2px;
+            align-self: stretch;
+            min-height: 54px;
+            background: linear-gradient(to bottom, var(--blue), rgba(37, 99, 235, 0.18));
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .media-list-content {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .media-list-header-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .media-list-title {
+            font-size: 15.5px;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        .media-list-row-card:hover .media-list-title {
+            color: var(--blue);
+        }
+
+        .media-list-category {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--blue);
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        .media-list-subtitle {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .media-list-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .media-list-action-link {
+            color: var(--blue);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media (max-width: 640px) {
+            .media-list-row-card {
+                padding: 14px 16px;
+                gap: 12px;
+            }
+            .media-list-thumb-wrap {
+                width: 76px;
+                height: 60px;
+            }
+            .media-list-title {
+                font-size: 14px;
+            }
+            .media-list-subtitle {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body data-theme="light">
@@ -2611,9 +3115,9 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </button>
-                <button type="button" class="nav-item" id="nav-item-my-project" data-target="my-project" onclick="showPage('my-project')" role="tab" aria-selected="false" title="Projects & Skills">
-                    <i class="fas fa-layer-group"></i>
-                    <span>Projects</span>
+                <button type="button" class="nav-item" id="nav-item-my-project" data-target="my-project" onclick="showPage('my-project')" role="tab" aria-selected="false" title="Career — Work Experience &amp; Projects">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Career</span>
                 </button>
                 <button type="button" class="nav-item" id="nav-item-gallery" data-target="gallery" onclick="showPage('gallery')" role="tab" aria-selected="false" title="Photo Gallery & Albums">
                     <i class="fas fa-images"></i>
@@ -2663,9 +3167,24 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
                 </div>
             </div>
 
-            <h2 class="profile-name">MD. ISTIAK ISLAM</h2>
-            <div class="typing-container"><span id="type-text"></span></div>
-            <p class="profile-location"><i class="fas fa-map-marker-alt" style="color: var(--red);"></i> Rajshahi, Bangladesh</p>
+            <h2 class="profile-name">
+                <span>MD. ISTIAK ISLAM</span>
+                <span class="profile-verified-shield" title="Verified IT Specialist &amp; Consultant" aria-label="Verified Profile">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 2L4 5.4V11.4C4 16.5 7.4 21.2 12 22.4C16.6 21.2 20 16.5 20 11.4V5.4L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12.2L11 14.2L15.2 10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </h2>
+            <div class="typing-container" aria-live="polite"><span id="type-text"></span></div>
+            <div class="profile-org-meta">
+                <span class="profile-org-item"><i class="fas fa-briefcase" style="color: var(--blue);"></i> JBD IT</span>
+                <span class="profile-meta-sep" aria-hidden="true">·</span>
+                <span class="profile-org-item"><i class="fas fa-map-marker-alt" style="color: var(--red);"></i> Rajshahi, Bangladesh</span>
+            </div>
+            <p class="profile-bio-text">
+                Versatile IT &amp; Ops pro skilled in tech support, CRM, and admin. Driven to fuel growth via technology.
+            </p>
             
             <div class="social-box" aria-label="Social Profiles">
                 <a href="https://www.facebook.com/mdistiakislamamin" target="_blank" rel="noopener noreferrer" class="fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -2699,11 +3218,11 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
                         Expert <span class="gradient-text-flow-alt">Solutions.</span>
                     </h1>
                     <p class="hero-desc">
-                        Building resilient IT infrastructure, seamless network architectures, and high-performance web applications tailored for modern businesses. From precision system administration to custom digital platforms, I transform complex technical challenges into fast, secure, and dependable solutions that drive real-world growth.
+                        As an IT Support Specialist, IT Administrator, and Web Developer, I deliver dependable technical support, office &amp; CRM operations, IT consulting, and custom web development—helping businesses solve technology challenges, streamline daily workflows, and fuel sustainable growth.
                     </p>
                     <div class="hero-action-buttons">
                         <button type="button" class="hire-btn" onclick="showPage('my-project')">
-                            <i class="fas fa-briefcase"></i> View Featured Work
+                            <i class="fas fa-briefcase"></i> Explore Career &amp; Work
                         </button>
                         <button type="button" class="contact-quick-btn" onclick="showPage('contact-me')">
                             <i class="fas fa-headset"></i> Request IT Consultation
@@ -2743,27 +3262,42 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
                     </div>
                 </div>
 
-                <!-- Highlight Services -->
+                <!-- Highlight Services — Core Specializations Dedicated to Services Provided -->
                 <div class="section-header">
                     <h2 class="section-title">Core Specializations</h2>
-                    <p class="section-subtitle">Professional technical services delivered to clients, teams, and growing Businesses.</p>
+                    <p class="section-subtitle">Professional IT support, administration, consulting, CRM operations, and web development services I provide to clients and businesses.</p>
                 </div>
 
-                <div class="services-highlight-grid">
+                <div class="services-highlight-grid" id="core-services-grid">
                     <div class="service-highlight-card">
-                        <span class="service-icon" style="color: var(--blue);"><i class="fas fa-network-wired"></i></span>
-                        <h3 class="service-title">IT Support & System Administration</h3>
-                        <p class="service-text">Hardware diagnostics, Windows &amp; Linux server configurations, MikroTik network security, and rapid remote or on-site technical troubleshooting.</p>
+                        <span class="service-icon" style="color: var(--blue);"><i class="fas fa-headset"></i></span>
+                        <h3 class="service-title">IT Support &amp; Technical Troubleshooting</h3>
+                        <p class="service-text">Dedicated remote and on-site technical support for Windows &amp; Linux workstations, software diagnostics, hardware troubleshooting, and rapid issue resolution to keep businesses running smoothly.</p>
                     </div>
                     <div class="service-highlight-card">
-                        <span class="service-icon" style="color: var(--green);"><i class="fas fa-code"></i></span>
-                        <h3 class="service-title">Web Design & Full-Stack Development</h3>
-                        <p class="service-text">Fast, mobile-responsive, and search-optimized business websites and custom web portals engineered for speed, clarity, and reliability.</p>
+                        <span class="service-icon" style="color: var(--green);"><i class="fas fa-network-wired"></i></span>
+                        <h3 class="service-title">IT Administration &amp; System Management</h3>
+                        <p class="service-text">End-to-end office IT administration, MikroTik router &amp; network security configuration, user access management, server maintenance, and automated data backup solutions.</p>
                     </div>
                     <div class="service-highlight-card">
-                        <span class="service-icon" style="color: var(--purple);"><i class="fas fa-store"></i></span>
-                        <h3 class="service-title">E-Commerce & Digital Operations</h3>
-                        <p class="service-text">End-to-end online store architecture, local payment gateway setup, product catalog structure, and automated inventory workflows.</p>
+                        <span class="service-icon" style="color: var(--purple);"><i class="fas fa-users-cog"></i></span>
+                        <h3 class="service-title">Office Operations &amp; CRM Management</h3>
+                        <p class="service-text">Streamlining daily office operations, CRM setup and administration, digital record management, client communication pipelines, and automated administrative workflows.</p>
+                    </div>
+                    <div class="service-highlight-card">
+                        <span class="service-icon" style="color: var(--cyan);"><i class="fas fa-code"></i></span>
+                        <h3 class="service-title">Web Design &amp; Full-Stack Development</h3>
+                        <p class="service-text">Fast, mobile-responsive, and search-optimized business websites, custom web portals, and e-commerce platforms engineered for speed, clarity, and reliability.</p>
+                    </div>
+                    <div class="service-highlight-card">
+                        <span class="service-icon" style="color: #f59e0b;"><i class="fas fa-lightbulb"></i></span>
+                        <h3 class="service-title">IT Consulting &amp; Technology Solutions</h3>
+                        <p class="service-text">Helping businesses solve complex technology challenges through practical IT audits, infrastructure upgrade planning, workflow digitization, and strategic tech consulting.</p>
+                    </div>
+                    <div class="service-highlight-card">
+                        <span class="service-icon" style="color: var(--red);"><i class="fas fa-microchip"></i></span>
+                        <h3 class="service-title">Hardware Engineering &amp; Office Setups</h3>
+                        <p class="service-text">Custom workstation assembly, SSD &amp; hardware upgrades, BIOS optimization, structured LAN/Wi-Fi deployment, and complete multi-device office IT setups.</p>
                     </div>
                 </div>
 
@@ -2959,194 +3493,194 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
                     </div>
 
                     <div class="testimonials-carousel-track" id="testimonialsTrack" role="region" aria-label="Testimonials Carousel">
-                        <!-- Testimonial 1 -->
-                        <div class="testimonial-card">
-                            <div>
-                                <span class="testimonial-badge-role badge-client">
-                                    <i class="fas fa-shopping-cart"></i> E-Commerce Development
-                                </span>
-                                <div class="testimonial-stars" aria-label="5 stars">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                                <p class="testimonial-quote">
-                                    Our online store used to take forever to load on mobile phones and customers were dropping off at checkout. Istiak rebuilt the storefront, fixed our bKash and SSLCommerz checkout flow, and made the whole site super fast. Truly dependable work.
-                                </p>
-                            </div>
-                            <div class="testimonial-author-row">
-                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #10b981, #06b6d4);">
-                                    TA
-                                </div>
-                                <div class="author-info">
-                                    <h4>Tanvir Ahmed</h4>
-                                    <p>Founder, Apex Tech Mart (Dhaka)</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 2 -->
-                        <div class="testimonial-card">
-                            <div>
-                                <span class="testimonial-badge-role badge-network">
-                                    <i class="fas fa-network-wired"></i> Office Network &amp; MikroTik
-                                </span>
-                                <div class="testimonial-stars" aria-label="5 stars">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                                <p class="testimonial-quote">
-                                    With 35+ people working in our office, zoom calls used to freeze whenever someone downloaded large files. Istiak configured our MikroTik router with proper bandwidth queues and dual-ISP failover. We haven't had a single drop in months.
-                                </p>
-                            </div>
-                            <div class="testimonial-author-row">
-                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #2563eb, #60a5fa);">
-                                    MH
-                                </div>
-                                <div class="author-info">
-                                    <h4>Mahmudul Hasan</h4>
-                                    <p>Operations Manager, NextGen BD</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 3 -->
+                        <!-- Service Review 1 -->
                         <div class="testimonial-card">
                             <div>
                                 <span class="testimonial-badge-role badge-support">
-                                    <i class="fas fa-headset"></i> Remote Emergency IT Support
+                                    <i class="fas fa-headset"></i> IT Support &amp; Troubleshooting
                                 </span>
                                 <div class="testimonial-stars" aria-label="5 stars">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 </div>
-                                <p class="testimonial-quote" lang="bn">
-                                    রাত ১১টার দিকে আমাদের অফিসের মেইন একাউন্টিং পিসি হঠাৎ ক্র্যাশ করেছিল। Istiak ভাইকে কল দেওয়ার সাথে সাথেই উনি AnyDesk-এ ঢুকে আমাদের সব ডাটা অক্ষত রেখে সিস্টেম রিকভার করে দেন। ওনার মতো রেসপন্সিভ মানুষ খুব কম পাওয়া যায়।
+                                <p class="testimonial-quote">
+                                    Whenever our office computers or accounting systems face technical glitches, Istiak resolves them within minutes via remote support or an on-site visit. His calm, systematic troubleshooting has saved our business hours of costly downtime.
                                 </p>
                             </div>
                             <div class="testimonial-author-row">
-                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #8b5cf6, #c084fc);">
-                                    KR
+                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #2563eb, #06b6d4);">
+                                    AI
                                 </div>
                                 <div class="author-info">
-                                    <h4>Kamrul Islam</h4>
-                                    <p>Managing Partner, Padma Trade House</p>
+                                    <h4>Ariful Islam</h4>
+                                    <p>Managing Director, Rajshahi Trade Link</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Testimonial 4 -->
+                        <!-- Service Review 2 -->
                         <div class="testimonial-card">
                             <div>
                                 <span class="testimonial-badge-role badge-client">
-                                    <i class="fas fa-globe"></i> Business Web Portal
+                                    <i class="fas fa-tasks"></i> IT Administration &amp; Office Ops
                                 </span>
                                 <div class="testimonial-stars" aria-label="5 stars">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 </div>
                                 <p class="testimonial-quote">
-                                    I needed a clean, trustworthy website for my consultancy where clients could book appointments directly on WhatsApp and email. He understood exactly what I wanted without complicated jargon and delivered two days ahead of schedule.
-                                </p>
-                            </div>
-                            <div class="testimonial-author-row">
-                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
-                                    NF
-                                </div>
-                                <div class="author-info">
-                                    <h4>Nusrat Farhana</h4>
-                                    <p>Director, SilkCity Design Studio (Rajshahi)</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 5 -->
-                        <div class="testimonial-card">
-                            <div>
-                                <span class="testimonial-badge-role badge-network">
-                                    <i class="fas fa-server"></i> Server &amp; Data Backup Setup
-                                </span>
-                                <div class="testimonial-stars" aria-label="5 stars">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                                <p class="testimonial-quote" lang="bn">
-                                    আমাদের ডায়াগনস্টিক সেন্টারের লোকাল সার্ভার এবং অটোমেটেড ব্যাকআপ সিস্টেম পুরোটা Istiak সেটআপ করে দিয়েছেন। আগে প্রতিদিন ম্যানুয়ালি ফাইল কপি করতে হতো, এখন রাত ১২টায় অটোমেটিক ক্লাউড ও নাস ড্রাইভে ব্যাকআপ হয়ে যায়।
-                                </p>
-                            </div>
-                            <div class="testimonial-author-row">
-                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #ec4899, #f472b6);">
-                                    SZ
-                                </div>
-                                <div class="author-info">
-                                    <h4>Dr. Shakil Zaman</h4>
-                                    <p>Coordinator, Metro Care Diagnostics</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 6 -->
-                        <div class="testimonial-card">
-                            <div>
-                                <span class="testimonial-badge-role badge-support">
-                                    <i class="fas fa-microchip"></i> Custom Workstation Build
-                                </span>
-                                <div class="testimonial-stars" aria-label="5 stars">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                                <p class="testimonial-quote">
-                                    He helped our video editing agency pick the right PC hardware components within budget, assembled four high-end workstations with clean cable management, and tuned the BIOS &amp; storage drives so 4K rendering runs cooler and faster.
-                                </p>
-                            </div>
-                            <div class="testimonial-author-row">
-                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #06b6d4, #2563eb);">
-                                    RH
-                                </div>
-                                <div class="author-info">
-                                    <h4>Rashedul Haque</h4>
-                                    <p>Creative Lead, FrameCraft Media</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 7 -->
-                        <div class="testimonial-card">
-                            <div>
-                                <span class="testimonial-badge-role badge-client">
-                                    <i class="fas fa-store"></i> Catalog &amp; Store Management
-                                </span>
-                                <div class="testimonial-stars" aria-label="5 stars">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                                <p class="testimonial-quote">
-                                    আমাদের শো-রুমের ইনভেন্টরি আর ওয়েবসাইটের প্রোডাক্ট ক্যাটালগ সবসময় এলোমেলো হয়ে থাকতো। Istiak ভাই পুরো সিস্টেমটা এত সুন্দরভাবে গুছিয়ে দিয়েছেন যে আমাদের স্টাফরাও এখন খুব সহজেই অর্ডার আর স্টক আপডেট করতে পারে।
+                                    Istiak completely restructured our daily office IT operations and CRM workflow. From setting up staff user permissions to organizing our client database and cloud files, everything now runs smoothly without administrative bottlenecks.
                                 </p>
                             </div>
                             <div class="testimonial-author-row">
                                 <div class="testimonial-avatar" style="background: linear-gradient(135deg, #10b981, #059669);">
-                                    AR
+                                    SA
                                 </div>
                                 <div class="author-info">
-                                    <h4>Ashraful Alam</h4>
-                                    <p>Proprietor, Rajshahi Gadget Corner</p>
+                                    <h4>Sadia Afrin</h4>
+                                    <p>Operations Head, Horizon Consultancy BD</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Testimonial 8 -->
+                        <!-- Service Review 3 -->
+                        <div class="testimonial-card">
+                            <div>
+                                <span class="testimonial-badge-role badge-client">
+                                    <i class="fas fa-laptop-code"></i> Web Development Service
+                                </span>
+                                <div class="testimonial-stars" aria-label="5 stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-quote" lang="bn">
+                                    আমাদের প্রতিষ্ঠানের জন্য একটি দ্রুতগতির এবং আধুনিক ওয়েবসাইট প্রয়োজন ছিল। Istiak ভাই খুব অল্প সময়ের মধ্যে মোবাইল-ফ্রেন্ডলি ওয়েবসাইট ও কাস্টমার ইনকোয়ারি সিস্টেম তৈরি করে দিয়েছেন, যা আমাদের অনলাইন সেলস অনেক বাড়িয়েছে।
+                                </p>
+                            </div>
+                            <div class="testimonial-author-row">
+                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+                                    MH
+                                </div>
+                                <div class="author-info">
+                                    <h4>Mehedi Hasan</h4>
+                                    <p>CEO, SilkCity Mart BD (Rajshahi)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Review 4 -->
                         <div class="testimonial-card">
                             <div>
                                 <span class="testimonial-badge-role badge-network">
-                                    <i class="fas fa-shield-alt"></i> Branch VPN &amp; Firewall
+                                    <i class="fas fa-lightbulb"></i> IT Consulting &amp; Strategy
                                 </span>
                                 <div class="testimonial-stars" aria-label="5 stars">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 </div>
                                 <p class="testimonial-quote">
-                                    Connecting our Dhaka and Rajshahi branch offices securely used to be a constant headache. Istiak set up a site-to-site WireGuard VPN on our routers and locked down unauthorized access. Rock-solid stability ever since.
+                                    We hired Istiak for IT consulting when upgrading our branch office systems. He audited our existing setup, recommended cost-effective hardware and network upgrades, and helped us solve long-standing connectivity challenges.
                                 </p>
                             </div>
                             <div class="testimonial-author-row">
-                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
-                                    FI
+                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
+                                    TA
                                 </div>
                                 <div class="author-info">
-                                    <h4>Farhan Imtiaz</h4>
-                                    <p>IT Lead, Bengal Agro Logistics</p>
+                                    <h4>Tariqul Alam</h4>
+                                    <p>Director, NorthBengal Agro &amp; Cold Storage</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Review 5 -->
+                        <div class="testimonial-card">
+                            <div>
+                                <span class="testimonial-badge-role badge-support">
+                                    <i class="fas fa-microchip"></i> Technical Support &amp; Hardware
+                                </span>
+                                <div class="testimonial-stars" aria-label="5 stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-quote" lang="bn">
+                                    অফিসের পিসিগুলোর হার্ডওয়্যার আপগ্রেড, এসএসডি সেটআপ এবং নেটওয়ার্ক মেইনটেন্যান্সের জন্য আমরা সবসময় Istiak-এর সার্ভিস নিয়ে থাকি। ওনার কাজের ফিনিশিং এবং টেকনিক্যাল সাপোর্ট সত্যিই অসাধারণ ও নির্ভরযোগ্য।
+                                </p>
+                            </div>
+                            <div class="testimonial-author-row">
+                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #06b6d4, #2563eb);">
+                                    RK
+                                </div>
+                                <div class="author-info">
+                                    <h4>Engr. Rezaul Karim</h4>
+                                    <p>Founder, PixelCraft Studio (Rajshahi)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Review 6 -->
+                        <div class="testimonial-card">
+                            <div>
+                                <span class="testimonial-badge-role badge-client">
+                                    <i class="fas fa-users-cog"></i> CRM &amp; Admin Automation
+                                </span>
+                                <div class="testimonial-stars" aria-label="5 stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-quote">
+                                    Tracking client appointments and follow-up calls used to be chaotic for our front-desk team. Istiak implemented a clean CRM and digital admin system and trained our staff so every client inquiry is tracked accurately.
+                                </p>
+                            </div>
+                            <div class="testimonial-author-row">
+                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);">
+                                    NT
+                                </div>
+                                <div class="author-info">
+                                    <h4>Nabila Tabassum</h4>
+                                    <p>Client Relations Lead, PrimeCare Services</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Review 7 -->
+                        <div class="testimonial-card">
+                            <div>
+                                <span class="testimonial-badge-role badge-network">
+                                    <i class="fas fa-network-wired"></i> Network &amp; Server Administration
+                                </span>
+                                <div class="testimonial-stars" aria-label="5 stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-quote">
+                                    Our office Wi-Fi and router used to drop connections during peak hours. Istiak reconfigured our MikroTik router with smart bandwidth management and automated server backups. Our network has been rock-solid ever since.
+                                </p>
+                            </div>
+                            <div class="testimonial-author-row">
+                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #10b981, #0ea5e9);">
+                                    SK
+                                </div>
+                                <div class="author-info">
+                                    <h4>Shahriar Kabir</h4>
+                                    <p>Branch Manager, Padma Valley Logistics</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Review 8 -->
+                        <div class="testimonial-card">
+                            <div>
+                                <span class="testimonial-badge-role badge-support">
+                                    <i class="fas fa-globe"></i> Web Portal &amp; Ongoing IT Support
+                                </span>
+                                <div class="testimonial-stars" aria-label="5 stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-quote" lang="bn">
+                                    আমাদের একাডেমির ওয়েব পোর্টাল তৈরি থেকে শুরু করে প্রতিদিনের আইটি ও অফিস অপারেশন সাপোর্ট—সবকিছুতেই Istiak ভাই আমাদের প্রথম পছন্দ। যেকোনো টেকনিক্যাল সমস্যায় ওনাকে নক দিলে দ্রুত সমাধান পাওয়া যায়।
+                                </p>
+                            </div>
+                            <div class="testimonial-author-row">
+                                <div class="testimonial-avatar" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
+                                    ZH
+                                </div>
+                                <div class="author-info">
+                                    <h4>Zahinul Haque</h4>
+                                    <p>Co-Founder, EduSpark Academy</p>
                                 </div>
                             </div>
                         </div>
@@ -3156,6 +3690,97 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
 
             <!-- 2. MY PROJECTS & SKILLS SECTION -->
             <section id="my-project" class="page-section" role="tabpanel">
+                <!-- Work Experience Section from User Screenshots -->
+                <div class="section-block" id="work-experience-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Work Experience &amp; Career</h2>
+                        <p class="section-subtitle">Professional roles, IT administration, project management, and organizational leadership</p>
+                    </div>
+
+                    <div class="work-headline-banner">
+                        <div class="work-headline-top" style="margin-bottom: 0;">
+                            <div class="work-headline-identity">
+                                <h3>
+                                    Md. Istiak Islam
+                                    <span class="inline-verified-icon" title="Verified Profile" aria-hidden="true"><i class="fas fa-shield-alt"></i></span>
+                                </h3>
+                                <p class="work-headline-sub">
+                                    IT Support Specialist | IT Administration | Technical Support | Web Development | IT Consulting | Office Operations | Helping Businesses Solve Technology Challenges
+                                </p>
+                            </div>
+                            <div class="work-headline-org-tag">
+                                <i class="fas fa-building"></i> JBD IT (JBDIT) • Rajshahi, Bangladesh
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="work-exp-grid">
+                        <div class="work-exp-card">
+                            <div class="work-exp-icon-badge" style="background: linear-gradient(135deg, #10b981, #059669);"><i class="fas fa-chart-line"></i></div>
+                            <div class="work-exp-content">
+                                <div class="work-exp-header-row">
+                                    <h3 class="work-exp-company">Health Wealth &amp; Career Buildup Corner</h3>
+                                    <span class="work-exp-status-active">Present</span>
+                                </div>
+                                <p class="work-exp-role">Information Technology Analyst (IT Analyst)</p>
+                                <p class="work-exp-period"><i class="far fa-calendar-alt"></i> Feb 6, 2021 - Present · 5 years, 8 months</p>
+                            </div>
+                        </div>
+                        <div class="work-exp-card">
+                            <div class="work-exp-icon-badge" style="background: linear-gradient(135deg, #2563eb, #06b6d4);"><i class="fas fa-headset"></i></div>
+                            <div class="work-exp-content">
+                                <div class="work-exp-header-row">
+                                    <h3 class="work-exp-company">JBDIT</h3>
+                                    <span class="work-exp-status-active">Present</span>
+                                </div>
+                                <p class="work-exp-role">IT Support Admin</p>
+                                <p class="work-exp-period"><i class="far fa-calendar-alt"></i> Feb 17, 2024 - Present · 2 years, 8 months</p>
+                            </div>
+                        </div>
+                        <div class="work-exp-card">
+                            <div class="work-exp-icon-badge" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"><i class="fas fa-tasks"></i></div>
+                            <div class="work-exp-content">
+                                <div class="work-exp-header-row">
+                                    <h3 class="work-exp-company">Hello Istiak</h3>
+                                    <span class="work-exp-status-active">Present</span>
+                                </div>
+                                <p class="work-exp-role">IT Project Manager</p>
+                                <p class="work-exp-period"><i class="far fa-calendar-alt"></i> Apr 8, 2021 - Present · 5 years, 6 months</p>
+                            </div>
+                        </div>
+                        <div class="work-exp-card">
+                            <div class="work-exp-icon-badge" style="background: linear-gradient(135deg, #0ea5e9, #2563eb);"><i class="fas fa-user-tie"></i></div>
+                            <div class="work-exp-content">
+                                <div class="work-exp-header-row">
+                                    <h3 class="work-exp-company">Selim English Education</h3>
+                                </div>
+                                <p class="work-exp-role">Manager</p>
+                                <p class="work-exp-period"><i class="far fa-calendar-alt"></i> Oct 27, 2021 - Apr 29, 2023 · 1 year, 6 months</p>
+                            </div>
+                        </div>
+                        <div class="work-exp-card">
+                            <div class="work-exp-icon-badge" style="background: linear-gradient(135deg, #ef4444, #f59e0b);"><i class="fas fa-pen-nib"></i></div>
+                            <div class="work-exp-content">
+                                <div class="work-exp-header-row">
+                                    <h3 class="work-exp-company">Hello DXN</h3>
+                                </div>
+                                <p class="work-exp-role">Managing editor</p>
+                                <p class="work-exp-period"><i class="far fa-calendar-alt"></i> Aug 9, 2021 - Aug 20, 2021</p>
+                            </div>
+                        </div>
+                        <div class="work-exp-card">
+                            <div class="work-exp-icon-badge" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);"><i class="fas fa-swimmer"></i></div>
+                            <div class="work-exp-content">
+                                <div class="work-exp-header-row">
+                                    <h3 class="work-exp-company">Alamgir Swimming Club</h3>
+                                </div>
+                                <p class="work-exp-role">Swimmer</p>
+                                <p class="work-exp-period"><i class="far fa-calendar-alt"></i> Aug 13, 2015 - Mar 12, 2017 · 1 year, 6 months</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="section-block">
                     <div class="section-header">
                         <h2 class="section-title red">Featured Work &amp; Projects</h2>
@@ -3289,7 +3914,7 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
                     </p>
                 </div>
 
-                <!-- Gallery Filter & Category Tabs -->
+                <!-- Gallery Filter & Category Tabs + View Mode Toggle -->
                 <div class="gallery-filter-bar">
                     <div class="gallery-album-chips" id="gallery-album-chips">
                         <button type="button" class="album-chip-btn active" onclick="filterGalleryAlbum('all', this)">
@@ -3306,6 +3931,17 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
                         </button>
                         <button type="button" class="album-chip-btn" onclick="filterGalleryAlbum('events', this)">
                             <i class="fas fa-calendar-check"></i> Tech Events &amp; Summits <span class="album-count-badge" id="count-events">0</span>
+                        </button>
+                    </div>
+
+                    <div class="view-mode-switcher" role="group" aria-label="Gallery View Mode">
+                        <button type="button" id="gallery-view-box-btn" class="view-mode-btn active" onclick="setGalleryViewMode('box')" aria-pressed="true" title="Box View">
+                            <i class="fas fa-th-large"></i>
+                            <span>Box View</span>
+                        </button>
+                        <button type="button" id="gallery-view-list-btn" class="view-mode-btn" onclick="setGalleryViewMode('list')" aria-pressed="false" title="List View">
+                            <i class="fas fa-list"></i>
+                            <span>List View</span>
                         </button>
                     </div>
                 </div>
@@ -3356,25 +3992,38 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
                         </button>
                     </div>
 
-                    <div class="blog-category-chips" id="blog-category-chips" role="group" aria-label="Blog Categories">
-                        <button type="button" class="blog-cat-btn active" onclick="filterBlogCategory('all', this)">
-                            All Posts
-                        </button>
-                        <button type="button" class="blog-cat-btn" onclick="filterBlogCategory('Networking', this)">
-                            Networking &amp; MikroTik
-                        </button>
-                        <button type="button" class="blog-cat-btn" onclick="filterBlogCategory('Server & Linux', this)">
-                            Server &amp; Linux
-                        </button>
-                        <button type="button" class="blog-cat-btn" onclick="filterBlogCategory('Web Development', this)">
-                            Web Development
-                        </button>
-                        <button type="button" class="blog-cat-btn" onclick="filterBlogCategory('IT Support', this)">
-                            IT Support &amp; Hardware
-                        </button>
-                        <button type="button" class="blog-cat-btn" onclick="filterBlogCategory('Cybersecurity', this)">
-                            Cybersecurity
-                        </button>
+                    <div class="blog-filter-view-row">
+                        <div class="blog-category-chips" id="blog-category-chips" role="group" aria-label="Blog Categories">
+                            <button type="button" class="blog-cat-btn active" onclick="filterBlogCategory('all', this)">
+                                All Posts
+                            </button>
+                            <button type="button" class="blog-cat-btn" onclick="filterBlogCategory('Networking', this)">
+                                Networking &amp; MikroTik
+                            </button>
+                            <button type="button" class="blog-cat-btn" onclick="filterBlogCategory('Server & Linux', this)">
+                                Server &amp; Linux
+                            </button>
+                            <button type="button" class="blog-cat-btn" onclick="filterBlogCategory('Web Development', this)">
+                                Web Development
+                            </button>
+                            <button type="button" class="blog-cat-btn" onclick="filterBlogCategory('IT Support', this)">
+                                IT Support &amp; Hardware
+                            </button>
+                            <button type="button" class="blog-cat-btn" onclick="filterBlogCategory('Cybersecurity', this)">
+                                Cybersecurity
+                            </button>
+                        </div>
+
+                        <div class="view-mode-switcher" role="group" aria-label="Blog View Mode">
+                            <button type="button" id="blog-view-box-btn" class="view-mode-btn active" onclick="setBlogViewMode('box')" aria-pressed="true" title="Box View">
+                                <i class="fas fa-th-large"></i>
+                                <span>Box View</span>
+                            </button>
+                            <button type="button" id="blog-view-list-btn" class="view-mode-btn" onclick="setBlogViewMode('list')" aria-pressed="false" title="List View">
+                                <i class="fas fa-list"></i>
+                                <span>List View</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -3453,35 +4102,37 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
 
             <!-- 4. EDUCATION & QUALIFICATIONS -->
             <section id="education" class="page-section" role="tabpanel">
-                <div class="section-header">
-                    <h2 class="section-title">Educational Background</h2>
-                    <p class="section-subtitle">Academic milestones and educational institutions</p>
-                </div>
-
-                <div class="edu-timeline">
-                    <div class="edu-card">
-                        <span class="year-badge"><i class="fas fa-graduation-cap"></i> University</span>
-                        <h3>Rajshahi Court College, Rajshahi</h3>
-                        <p style="color: var(--blue); font-weight: 600; font-size: 13.5px;">Bachelor of Arts (BA) — National University</p>
-                        <p style="color: var(--text-muted); font-size: 12.5px; margin-top: 4px;">Higher studies emphasizing communications, humanities, and IT management.</p>
+                <div class="section-block">
+                    <div class="section-header">
+                        <h2 class="section-title">Educational Background</h2>
+                        <p class="section-subtitle">Academic milestones and educational institutions</p>
                     </div>
 
-                    <div class="edu-card">
-                        <span class="year-badge"><i class="fas fa-university"></i> Higher Secondary (HSC)</span>
-                        <h3>Shahid Mamun Mahmud Police Lines School &amp; College, Rajshahi</h3>
-                        <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Class - Eleven &amp; Twelve (HSC)</p>
-                    </div>
+                    <div class="edu-timeline">
+                        <div class="edu-card">
+                            <span class="year-badge"><i class="fas fa-graduation-cap"></i> College / University • Class of 2024</span>
+                            <h3>Rajshahi Court College, Rajshahi.</h3>
+                            <p style="color: var(--blue); font-weight: 600; font-size: 13.5px;">Bachelor of Arts (BA) — National University • Class of 2024</p>
+                            <p style="color: var(--text-muted); font-size: 12.5px; margin-top: 4px;">Higher studies emphasizing communications, humanities, and IT management.</p>
+                        </div>
 
-                    <div class="edu-card">
-                        <span class="year-badge"><i class="fas fa-school"></i> Secondary School (SSC)</span>
-                        <h3>Rajshahi Lokenath High School, Rajshahi</h3>
-                        <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Class - Eight, Nine &amp; Ten (SSC)</p>
-                    </div>
+                        <div class="edu-card">
+                            <span class="year-badge"><i class="fas fa-university"></i> Higher Secondary (HSC)</span>
+                            <h3>Shahid Mamun Mahmud Police Lines School &amp; College, Rajshahi</h3>
+                            <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Class - Eleven &amp; Twelve (HSC)</p>
+                        </div>
 
-                    <div class="edu-card">
-                        <span class="year-badge"><i class="fas fa-book-reader"></i> Primary &amp; Junior Education</span>
-                        <h3>Masjid Mission Academy School &amp; College, Rajshahi</h3>
-                        <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Foundational Studies (Class - Play to Seven)</p>
+                        <div class="edu-card">
+                            <span class="year-badge"><i class="fas fa-school"></i> Secondary School (SSC)</span>
+                            <h3>Rajshahi Lokenath High School, Rajshahi</h3>
+                            <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Class - Eight, Nine &amp; Ten (SSC)</p>
+                        </div>
+
+                        <div class="edu-card">
+                            <span class="year-badge"><i class="fas fa-book-reader"></i> Primary &amp; Secondary Academy</span>
+                            <h3 class="bangla">মসজিদ মিশন একাডেমী, রাজশাহী- Masjid Mission Academy, Rajshahi</h3>
+                            <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Foundational Studies (Class - Play to Seven)</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -4112,11 +4763,13 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
 
         // 4. Dynamic Typing Effect
         var titles = [
-            "IT Specialist & Consultant", 
-            "System Administrator", 
-            "IT Course Instructor", 
-            "E-Commerce & F-Commerce Admin",
-            "Minimal Graphic Designer"
+            "IT Support Specialist",
+            "IT Administration",
+            "Technical Support",
+            "Web Development",
+            "IT Consulting",
+            "Office Operations",
+            "Helping Businesses Solve Technology Challenges"
         ];
         var titleIdx = 0, charIdx = 0, isDeleting = false;
 
@@ -4313,6 +4966,7 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
 
         var galleryPhotos = [];
         var activeCategoryFilter = 'all';
+        var galleryViewMode = 'box';
         var currentFilteredPhotos = [];
         var activeLightboxIndex = 0;
 
@@ -4338,12 +4992,40 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
             }
         }
 
+        function setGalleryViewMode(mode) {
+            galleryViewMode = (mode === 'list') ? 'list' : 'box';
+            var boxBtn = document.getElementById('gallery-view-box-btn');
+            var listBtn = document.getElementById('gallery-view-list-btn');
+            if (boxBtn) {
+                if (galleryViewMode === 'box') {
+                    boxBtn.classList.add('active');
+                    boxBtn.setAttribute('aria-pressed', 'true');
+                } else {
+                    boxBtn.classList.remove('active');
+                    boxBtn.setAttribute('aria-pressed', 'false');
+                }
+            }
+            if (listBtn) {
+                if (galleryViewMode === 'list') {
+                    listBtn.classList.add('active');
+                    listBtn.setAttribute('aria-pressed', 'true');
+                } else {
+                    listBtn.classList.remove('active');
+                    listBtn.setAttribute('aria-pressed', 'false');
+                }
+            }
+            renderGallery();
+        }
+
         function renderGallery(catFilter) {
             if (catFilter) activeCategoryFilter = catFilter;
             
             var grid = document.getElementById('gallery-grid-container');
             var emptyState = document.getElementById('gallery-empty-state');
             if (!grid) return;
+
+            grid.className = (galleryViewMode === 'list') ? 'media-list-container' : 'gallery-grid';
+            grid.setAttribute('data-view-mode', galleryViewMode);
 
             if (!activeCategoryFilter || activeCategoryFilter === 'all') {
                 currentFilteredPhotos = galleryPhotos;
@@ -4372,27 +5054,48 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
                 var safeDate = escapeHtml(photo.date || 'Recent');
                 var safeImg = escapeHtml(photo.img);
 
-                html += '<div class="gallery-item-card" data-photo-id="' + Number(photo.id) + '" data-index="' + index + '" data-category="' + escapeHtml(photo.category) + '" onclick="openLightbox(' + index + ')">' +
-                    '<div class="gallery-img-wrap">' +
-                        '<span class="gallery-album-tag">' +
-                            '<i class="fas fa-folder"></i> ' + categoryLabel +
-                        '</span>' +
-                        '<img src="' + safeImg + '" alt="' + safeTitle + '" class="gallery-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80\';">' +
-                        '<div class="gallery-img-overlay">' +
-                            '<div class="gallery-zoom-icon">' +
-                                '<i class="fas fa-expand-alt"></i>' +
+                if (galleryViewMode === 'list') {
+                    html += '<div class="media-list-row-card" data-photo-id="' + Number(photo.id) + '" data-index="' + index + '" data-category="' + escapeHtml(photo.category) + '" onclick="openLightbox(' + index + ')">' +
+                        '<div class="media-list-thumb-wrap">' +
+                            '<img src="' + safeImg + '" alt="' + safeTitle + '" class="media-list-thumb" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80\';">' +
+                        '</div>' +
+                        '<div class="media-list-divider" aria-hidden="true"></div>' +
+                        '<div class="media-list-content">' +
+                            '<div class="media-list-header-row">' +
+                                '<h3 class="media-list-title">' + safeTitle + '</h3>' +
+                                '<span class="media-list-category">' + categoryLabel + '</span>' +
+                            '</div>' +
+                            '<p class="media-list-subtitle">' + safeDesc + '</p>' +
+                            '<div class="media-list-meta">' +
+                                '<span><i class="fas fa-map-pin" style="color: var(--blue);"></i> ' + safeLocation + '</span>' +
+                                '<span aria-hidden="true">·</span>' +
+                                '<span><i class="far fa-calendar-alt"></i> ' + safeDate + '</span>' +
                             '</div>' +
                         '</div>' +
-                    '</div>' +
-                    '<div class="gallery-info-body">' +
-                        '<div class="gallery-photo-title">' + safeTitle + '</div>' +
-                        '<div class="gallery-photo-desc">' + safeDesc + '</div>' +
-                        '<div class="gallery-photo-meta">' +
-                            '<span><i class="fas fa-map-pin" style="color: var(--blue);"></i> ' + safeLocation + '</span>' +
-                            '<span><i class="far fa-calendar-alt"></i> ' + safeDate + '</span>' +
+                    '</div>';
+                } else {
+                    html += '<div class="gallery-item-card" data-photo-id="' + Number(photo.id) + '" data-index="' + index + '" data-category="' + escapeHtml(photo.category) + '" onclick="openLightbox(' + index + ')">' +
+                        '<div class="gallery-img-wrap">' +
+                            '<span class="gallery-album-tag">' +
+                                '<i class="fas fa-folder"></i> ' + categoryLabel +
+                            '</span>' +
+                            '<img src="' + safeImg + '" alt="' + safeTitle + '" class="gallery-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80\';">' +
+                            '<div class="gallery-img-overlay">' +
+                                '<div class="gallery-zoom-icon">' +
+                                    '<i class="fas fa-expand-alt"></i>' +
+                                '</div>' +
+                            '</div>' +
                         '</div>' +
-                    '</div>' +
-                '</div>';
+                        '<div class="gallery-info-body">' +
+                            '<div class="gallery-photo-title">' + safeTitle + '</div>' +
+                            '<div class="gallery-photo-desc">' + safeDesc + '</div>' +
+                            '<div class="gallery-photo-meta">' +
+                                '<span><i class="fas fa-map-pin" style="color: var(--blue);"></i> ' + safeLocation + '</span>' +
+                                '<span><i class="far fa-calendar-alt"></i> ' + safeDate + '</span>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>';
+                }
             });
 
             grid.innerHTML = html;
@@ -4586,12 +5289,41 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
 
         var activeBlogCategory = 'all';
         var currentBlogSearchQuery = '';
+        var blogViewMode = 'box';
         var filteredBlogPosts = [];
+
+        function setBlogViewMode(mode) {
+            blogViewMode = (mode === 'list') ? 'list' : 'box';
+            var boxBtn = document.getElementById('blog-view-box-btn');
+            var listBtn = document.getElementById('blog-view-list-btn');
+            if (boxBtn) {
+                if (blogViewMode === 'box') {
+                    boxBtn.classList.add('active');
+                    boxBtn.setAttribute('aria-pressed', 'true');
+                } else {
+                    boxBtn.classList.remove('active');
+                    boxBtn.setAttribute('aria-pressed', 'false');
+                }
+            }
+            if (listBtn) {
+                if (blogViewMode === 'list') {
+                    listBtn.classList.add('active');
+                    listBtn.setAttribute('aria-pressed', 'true');
+                } else {
+                    listBtn.classList.remove('active');
+                    listBtn.setAttribute('aria-pressed', 'false');
+                }
+            }
+            renderBlogPosts();
+        }
 
         function renderBlogPosts() {
             var grid = document.getElementById('blog-grid-container');
             var emptyState = document.getElementById('blog-empty-state');
             if (!grid) return;
+
+            grid.className = (blogViewMode === 'list') ? 'media-list-container' : 'blog-grid';
+            grid.setAttribute('data-view-mode', blogViewMode);
 
             var query = (currentBlogSearchQuery || '').trim().toLowerCase();
 
@@ -4629,27 +5361,50 @@ SECURITY LEVEL: TIER-4 STRICT PROPRIETARY & HARDENED PROTECTION
                 var safeRead = escapeHtml(post.readTime || '5 min read');
                 var safePhoto = escapeHtml( convertGoogleDriveLink(post.photo) || post.photo );
 
-                html += '<article class="blog-card" onclick="openBlogModal(' + Number(post.id) + ')">' +
-                    '<div class="blog-card-img-wrap">' +
-                        '<img src="' + safePhoto + '" alt="' + safeTitle + '" class="blog-card-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80\';">' +
-                    '</div>' +
-                    '<div class="blog-card-body">' +
-                        '<div class="blog-card-meta">' +
-                            '<span>' + safeCat + '</span>' +
-                            '<span class="meta-sep" aria-hidden="true">·</span>' +
-                            '<span class="meta-date">' + safeDate + '</span>' +
-                            '<span class="meta-sep" aria-hidden="true">·</span>' +
-                            '<span class="meta-date">' + safeRead + '</span>' +
+                if (blogViewMode === 'list') {
+                    html += '<article class="media-list-row-card" onclick="openBlogModal(' + Number(post.id) + ')">' +
+                        '<div class="media-list-thumb-wrap">' +
+                            '<img src="' + safePhoto + '" alt="' + safeTitle + '" class="media-list-thumb" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80\';">' +
                         '</div>' +
-                        '<h3 class="blog-card-title">' + safeTitle + '</h3>' +
-                        '<p class="blog-card-desc">' + safeDesc + '</p>' +
-                        '<div class="blog-card-footer">' +
-                            '<button type="button" class="blog-read-btn">' +
-                                'Read Article <i class="fas fa-arrow-right"></i>' +
-                            '</button>' +
+                        '<div class="media-list-divider" aria-hidden="true"></div>' +
+                        '<div class="media-list-content">' +
+                            '<div class="media-list-header-row">' +
+                                '<h3 class="media-list-title">' + safeTitle + '</h3>' +
+                                '<span class="media-list-category">' + safeCat + '</span>' +
+                            '</div>' +
+                            '<p class="media-list-subtitle">' + safeDesc + '</p>' +
+                            '<div class="media-list-meta">' +
+                                '<span><i class="far fa-calendar-alt"></i> ' + safeDate + '</span>' +
+                                '<span aria-hidden="true">·</span>' +
+                                '<span><i class="far fa-clock"></i> ' + safeRead + '</span>' +
+                                '<span aria-hidden="true">·</span>' +
+                                '<span class="media-list-action-link">Read Article <i class="fas fa-arrow-right"></i></span>' +
+                            '</div>' +
                         '</div>' +
-                    '</div>' +
-                '</article>';
+                    '</article>';
+                } else {
+                    html += '<article class="blog-card" onclick="openBlogModal(' + Number(post.id) + ')">' +
+                        '<div class="blog-card-img-wrap">' +
+                            '<img src="' + safePhoto + '" alt="' + safeTitle + '" class="blog-card-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80\';">' +
+                        '</div>' +
+                        '<div class="blog-card-body">' +
+                            '<div class="blog-card-meta">' +
+                                '<span>' + safeCat + '</span>' +
+                                '<span class="meta-sep" aria-hidden="true">·</span>' +
+                                '<span class="meta-date">' + safeDate + '</span>' +
+                                '<span class="meta-sep" aria-hidden="true">·</span>' +
+                                '<span class="meta-date">' + safeRead + '</span>' +
+                            '</div>' +
+                            '<h3 class="blog-card-title">' + safeTitle + '</h3>' +
+                            '<p class="blog-card-desc">' + safeDesc + '</p>' +
+                            '<div class="blog-card-footer">' +
+                                '<button type="button" class="blog-read-btn">' +
+                                    'Read Article <i class="fas fa-arrow-right"></i>' +
+                                '</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</article>';
+                }
             });
 
             grid.innerHTML = html;

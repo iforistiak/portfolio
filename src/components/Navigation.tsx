@@ -92,10 +92,10 @@ export const Navigation: React.FC<NavigationProps> = ({
             }}
             role="tab"
             aria-selected={activeTab === 'my-project'}
-            title="Projects & Skills"
+            title="Career — Work Experience & Projects"
           >
-            <i className="fas fa-layer-group" style={{ pointerEvents: 'none' }}></i>
-            <span style={{ pointerEvents: 'none' }}>Projects</span>
+            <i className="fas fa-briefcase" style={{ pointerEvents: 'none' }}></i>
+            <span style={{ pointerEvents: 'none' }}>Career</span>
           </button>
 
           <button

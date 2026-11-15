@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { blogPostsData, convertGoogleDriveLink } from '../data/portfolioData';
-import { BlogPost } from '../types';
+import { BlogPost, ViewMode } from '../types';
 
 interface BlogSectionProps {
   onOpenPost: (post: BlogPost) => void;
@@ -9,6 +9,7 @@ interface BlogSectionProps {
 export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenPost }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [viewMode, setViewMode] = useState<ViewMode>('box');
 
   // Newsletter state
   const [newsletterEmail, setNewsletterEmail] = useState('');
@@ -92,7 +93,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenPost }) => {
         </p>
       </div>
 
-      {/* Search Bar & Category Filter Tabs */}
+      {/* Search Bar & Category Filter Tabs + View Mode Toggle */}
       <div className="blog-controls-bar">
         <div className="blog-search-wrap">
           <i className="fas fa-search blog-search-icon"></i>
@@ -120,94 +121,169 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenPost }) => {
           )}
         </div>
 
-        <div className="blog-category-chips" id="blog-category-chips" role="group" aria-label="Blog Categories">
-          <button
-            type="button"
-            className={`blog-cat-btn ${selectedCategory === 'all' ? 'active' : ''}`}
-            onClick={() => setSelectedCategory('all')}
-          >
-            All Posts
-          </button>
-          <button
-            type="button"
-            className={`blog-cat-btn ${selectedCategory === 'Networking' ? 'active' : ''}`}
-            onClick={() => setSelectedCategory('Networking')}
-          >
-            Networking &amp; MikroTik
-          </button>
-          <button
-            type="button"
-            className={`blog-cat-btn ${selectedCategory === 'Server & Linux' ? 'active' : ''}`}
-            onClick={() => setSelectedCategory('Server & Linux')}
-          >
-            Server &amp; Linux
-          </button>
-          <button
-            type="button"
-            className={`blog-cat-btn ${selectedCategory === 'Web Development' ? 'active' : ''}`}
-            onClick={() => setSelectedCategory('Web Development')}
-          >
-            Web Development
-          </button>
-          <button
-            type="button"
-            className={`blog-cat-btn ${selectedCategory === 'IT Support' ? 'active' : ''}`}
-            onClick={() => setSelectedCategory('IT Support')}
-          >
-            IT Support &amp; Hardware
-          </button>
-          <button
-            type="button"
-            className={`blog-cat-btn ${selectedCategory === 'Cybersecurity' ? 'active' : ''}`}
-            onClick={() => setSelectedCategory('Cybersecurity')}
-          >
-            Cybersecurity
-          </button>
+        <div className="blog-filter-view-row">
+          <div className="blog-category-chips" id="blog-category-chips" role="group" aria-label="Blog Categories">
+            <button
+              type="button"
+              className={`blog-cat-btn ${selectedCategory === 'all' ? 'active' : ''}`}
+              onClick={() => setSelectedCategory('all')}
+            >
+              All Posts
+            </button>
+            <button
+              type="button"
+              className={`blog-cat-btn ${selectedCategory === 'Networking' ? 'active' : ''}`}
+              onClick={() => setSelectedCategory('Networking')}
+            >
+              Networking &amp; MikroTik
+            </button>
+            <button
+              type="button"
+              className={`blog-cat-btn ${selectedCategory === 'Server & Linux' ? 'active' : ''}`}
+              onClick={() => setSelectedCategory('Server & Linux')}
+            >
+              Server &amp; Linux
+            </button>
+            <button
+              type="button"
+              className={`blog-cat-btn ${selectedCategory === 'Web Development' ? 'active' : ''}`}
+              onClick={() => setSelectedCategory('Web Development')}
+            >
+              Web Development
+            </button>
+            <button
+              type="button"
+              className={`blog-cat-btn ${selectedCategory === 'IT Support' ? 'active' : ''}`}
+              onClick={() => setSelectedCategory('IT Support')}
+            >
+              IT Support &amp; Hardware
+            </button>
+            <button
+              type="button"
+              className={`blog-cat-btn ${selectedCategory === 'Cybersecurity' ? 'active' : ''}`}
+              onClick={() => setSelectedCategory('Cybersecurity')}
+            >
+              Cybersecurity
+            </button>
+          </div>
+
+          <div className="view-mode-switcher" role="group" aria-label="Blog View Mode">
+            <button
+              type="button"
+              id="blog-view-box-btn"
+              className={`view-mode-btn ${viewMode === 'box' ? 'active' : ''}`}
+              onClick={() => setViewMode('box')}
+              aria-pressed={viewMode === 'box'}
+              title="Box View"
+            >
+              <i className="fas fa-th-large"></i>
+              <span>Box View</span>
+            </button>
+            <button
+              type="button"
+              id="blog-view-list-btn"
+              className={`view-mode-btn ${viewMode === 'list' ? 'active' : ''}`}
+              onClick={() => setViewMode('list')}
+              aria-pressed={viewMode === 'list'}
+              title="List View"
+            >
+              <i className="fas fa-list"></i>
+              <span>List View</span>
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Blog Posts Dynamic Grid */}
+      {/* Blog Posts Dynamic Container: Box View vs List View */}
       {filteredPosts.length > 0 ? (
-        <div className="blog-grid" id="blog-grid-container">
-          {filteredPosts.map((post) => {
-            const photoUrl = convertGoogleDriveLink(post.photo) || post.photo;
-            return (
-              <article
-                key={post.id}
-                className="blog-card"
-                onClick={() => onOpenPost(post)}
-              >
-                <div className="blog-card-img-wrap">
-                  <img
-                    src={photoUrl}
-                    alt={post.title}
-                    className="blog-card-img"
-                    loading="lazy"
-                    onError={(e) => {
-                      e.currentTarget.src = 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80';
-                    }}
-                  />
-                </div>
-                <div className="blog-card-body">
-                  <div className="blog-card-meta">
-                    <span>{post.category}</span>
-                    <span className="meta-sep" aria-hidden="true">·</span>
-                    <span className="meta-date">{post.date}</span>
-                    <span className="meta-sep" aria-hidden="true">·</span>
-                    <span className="meta-date">{post.readTime}</span>
+        viewMode === 'box' ? (
+          <div className="blog-grid" id="blog-grid-container" data-view-mode="box">
+            {filteredPosts.map((post) => {
+              const photoUrl = convertGoogleDriveLink(post.photo) || post.photo;
+              return (
+                <article
+                  key={post.id}
+                  className="blog-card"
+                  onClick={() => onOpenPost(post)}
+                >
+                  <div className="blog-card-img-wrap">
+                    <img
+                      src={photoUrl}
+                      alt={post.title}
+                      className="blog-card-img"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80';
+                      }}
+                    />
                   </div>
-                  <h3 className="blog-card-title">{post.title}</h3>
-                  <p className="blog-card-desc">{post.description}</p>
-                  <div className="blog-card-footer">
-                    <button type="button" className="blog-read-btn">
-                      Read Article <i className="fas fa-arrow-right"></i>
-                    </button>
+                  <div className="blog-card-body">
+                    <div className="blog-card-meta">
+                      <span>{post.category}</span>
+                      <span className="meta-sep" aria-hidden="true">·</span>
+                      <span className="meta-date">{post.date}</span>
+                      <span className="meta-sep" aria-hidden="true">·</span>
+                      <span className="meta-date">{post.readTime}</span>
+                    </div>
+                    <h3 className="blog-card-title">{post.title}</h3>
+                    <p className="blog-card-desc">{post.description}</p>
+                    <div className="blog-card-footer">
+                      <button type="button" className="blog-read-btn">
+                        Read Article <i className="fas fa-arrow-right"></i>
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </article>
-            );
-          })}
-        </div>
+                </article>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="media-list-container" id="blog-grid-container" data-view-mode="list">
+            {filteredPosts.map((post) => {
+              const photoUrl = convertGoogleDriveLink(post.photo) || post.photo;
+              return (
+                <article
+                  key={post.id}
+                  className="media-list-row-card"
+                  onClick={() => onOpenPost(post)}
+                >
+                  <div className="media-list-thumb-wrap">
+                    <img
+                      src={photoUrl}
+                      alt={post.title}
+                      className="media-list-thumb"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80';
+                      }}
+                    />
+                  </div>
+                  <div className="media-list-divider" aria-hidden="true"></div>
+                  <div className="media-list-content">
+                    <div className="media-list-header-row">
+                      <h3 className="media-list-title">{post.title}</h3>
+                      <span className="media-list-category">{post.category}</span>
+                    </div>
+                    <p className="media-list-subtitle">{post.description}</p>
+                    <div className="media-list-meta">
+                      <span>
+                        <i className="far fa-calendar-alt"></i> {post.date}
+                      </span>
+                      <span aria-hidden="true">·</span>
+                      <span>
+                        <i className="far fa-clock"></i> {post.readTime}
+                      </span>
+                      <span aria-hidden="true">·</span>
+                      <span className="media-list-action-link">
+                        Read Article <i className="fas fa-arrow-right"></i>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        )
       ) : (
         <div
           id="blog-empty-state"

@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { defaultGalleryPhotos, getCategoryLabel, convertGoogleDriveLink } from '../data/portfolioData';
-import { GalleryPhoto } from '../types';
+import { GalleryPhoto, ViewMode } from '../types';
 
 interface GallerySectionProps {
   onOpenLightbox: (photos: GalleryPhoto[], index: number) => void;
@@ -8,6 +8,7 @@ interface GallerySectionProps {
 
 export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenLightbox }) => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [viewMode, setViewMode] = useState<ViewMode>('box');
 
   const photos = useMemo(() => {
     return defaultGalleryPhotos.map((photo) => ({
@@ -42,7 +43,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenLightbox }
         </p>
       </div>
 
-      {/* Gallery Filter & Category Tabs */}
+      {/* Gallery Filter & Category Tabs + View Mode Toggle */}
       <div className="gallery-filter-bar">
         <div className="gallery-album-chips" id="gallery-album-chips">
           <button
@@ -96,51 +97,119 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenLightbox }
             </span>
           </button>
         </div>
+
+        <div className="view-mode-switcher" role="group" aria-label="Gallery View Mode">
+          <button
+            type="button"
+            id="gallery-view-box-btn"
+            className={`view-mode-btn ${viewMode === 'box' ? 'active' : ''}`}
+            onClick={() => setViewMode('box')}
+            aria-pressed={viewMode === 'box'}
+            title="Box View"
+          >
+            <i className="fas fa-th-large"></i>
+            <span>Box View</span>
+          </button>
+          <button
+            type="button"
+            id="gallery-view-list-btn"
+            className={`view-mode-btn ${viewMode === 'list' ? 'active' : ''}`}
+            onClick={() => setViewMode('list')}
+            aria-pressed={viewMode === 'list'}
+            title="List View"
+          >
+            <i className="fas fa-list"></i>
+            <span>List View</span>
+          </button>
+        </div>
       </div>
 
-      {/* Gallery Grid */}
+      {/* Gallery Content: Box View vs List View */}
       {filteredPhotos.length > 0 ? (
-        <div className="gallery-grid" id="gallery-grid-container">
-          {filteredPhotos.map((photo, index) => (
-            <div
-              key={photo.id}
-              className="gallery-item-card"
-              onClick={() => onOpenLightbox(filteredPhotos, index)}
-            >
-              <div className="gallery-img-wrap">
-                <span className="gallery-album-tag">
-                  <i className="fas fa-folder"></i> {getCategoryLabel(photo.category)}
-                </span>
-                <img
-                  src={photo.img}
-                  alt={photo.title}
-                  className="gallery-img"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80';
-                  }}
-                />
-                <div className="gallery-img-overlay">
-                  <div className="gallery-zoom-icon">
-                    <i className="fas fa-expand-alt"></i>
+        viewMode === 'box' ? (
+          <div className="gallery-grid" id="gallery-grid-container" data-view-mode="box">
+            {filteredPhotos.map((photo, index) => (
+              <div
+                key={photo.id}
+                className="gallery-item-card"
+                onClick={() => onOpenLightbox(filteredPhotos, index)}
+              >
+                <div className="gallery-img-wrap">
+                  <span className="gallery-album-tag">
+                    <i className="fas fa-folder"></i> {getCategoryLabel(photo.category)}
+                  </span>
+                  <img
+                    src={photo.img}
+                    alt={photo.title}
+                    className="gallery-img"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80';
+                    }}
+                  />
+                  <div className="gallery-img-overlay">
+                    <div className="gallery-zoom-icon">
+                      <i className="fas fa-expand-alt"></i>
+                    </div>
+                  </div>
+                </div>
+                <div className="gallery-info-body">
+                  <div className="gallery-photo-title">{photo.title}</div>
+                  <div className="gallery-photo-desc">{photo.desc || 'Click to expand high-resolution preview.'}</div>
+                  <div className="gallery-photo-meta">
+                    <span>
+                      <i className="fas fa-map-pin" style={{ color: 'var(--blue)' }}></i> {photo.location || 'Rajshahi, BD'}
+                    </span>
+                    <span>
+                      <i className="far fa-calendar-alt"></i> {photo.date || 'Recent'}
+                    </span>
                   </div>
                 </div>
               </div>
-              <div className="gallery-info-body">
-                <div className="gallery-photo-title">{photo.title}</div>
-                <div className="gallery-photo-desc">{photo.desc || 'Click to expand high-resolution preview.'}</div>
-                <div className="gallery-photo-meta">
-                  <span>
-                    <i className="fas fa-map-pin" style={{ color: 'var(--blue)' }}></i> {photo.location || 'Rajshahi, BD'}
-                  </span>
-                  <span>
-                    <i className="far fa-calendar-alt"></i> {photo.date || 'Recent'}
-                  </span>
+            ))}
+          </div>
+        ) : (
+          <div className="media-list-container" id="gallery-grid-container" data-view-mode="list">
+            {filteredPhotos.map((photo, index) => (
+              <div
+                key={photo.id}
+                className="media-list-row-card"
+                onClick={() => onOpenLightbox(filteredPhotos, index)}
+              >
+                <div className="media-list-thumb-wrap">
+                  <img
+                    src={photo.img}
+                    alt={photo.title}
+                    className="media-list-thumb"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80';
+                    }}
+                  />
+                </div>
+                <div className="media-list-divider" aria-hidden="true"></div>
+                <div className="media-list-content">
+                  <div className="media-list-header-row">
+                    <h3 className="media-list-title">{photo.title}</h3>
+                    <span className="media-list-category">{getCategoryLabel(photo.category)}</span>
+                  </div>
+                  <p className="media-list-subtitle">
+                    {photo.desc || 'Click to expand high-resolution preview.'}
+                  </p>
+                  <div className="media-list-meta">
+                    <span>
+                      <i className="fas fa-map-pin" style={{ color: 'var(--blue)' }}></i> {photo.location || 'Rajshahi, BD'}
+                    </span>
+                    <span aria-hidden="true">·</span>
+                    <span>
+                      <i className="far fa-calendar-alt"></i> {photo.date || 'Recent'}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )
       ) : (
         <div
           id="gallery-empty-state"
@@ -177,3 +246,4 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenLightbox }
     </section>
   );
 };
+

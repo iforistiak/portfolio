@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { typewriterTitles } from '../data/portfolioData';
+import { typewriterTitles, personalProfileInfo } from '../data/portfolioData';
 
 interface ProfileSidebarProps {
   onNavigateContact: () => void;
@@ -24,7 +24,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ onNavigateContac
       setTitleIdx((prev) => (prev + 1) % typewriterTitles.length);
       timer = setTimeout(() => {}, 400);
     } else {
-      const speed = isDeleting ? 45 : 95;
+      const speed = isDeleting ? 35 : 70;
       timer = setTimeout(() => {
         const nextCharIdx = isDeleting ? charIdx - 1 : charIdx + 1;
         setCharIdx(nextCharIdx);
@@ -49,6 +49,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ onNavigateContac
             alt="Md. Istiak Islam"
             className="profile-photo-img"
             draggable="false"
+            referrerPolicy="no-referrer"
             onError={(e) => {
               const target = e.currentTarget;
               if (target.src.indexOf('/public/') === -1) {
@@ -59,12 +60,32 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ onNavigateContac
         </div>
       </div>
 
-      <h2 className="profile-name">MD. ISTIAK ISLAM</h2>
-      <div className="typing-container">
+      <h2 className="profile-name">
+        <span>MD. ISTIAK ISLAM</span>
+        <span className="profile-verified-shield" title="Verified IT Specialist & Consultant" aria-label="Verified Profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2L4 5.4V11.4C4 16.5 7.4 21.2 12 22.4C16.6 21.2 20 16.5 20 11.4V5.4L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M9 12.2L11 14.2L15.2 10" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </span>
+      </h2>
+
+      <div className="typing-container" aria-live="polite">
         <span id="type-text">{displayText}</span>
       </div>
-      <p className="profile-location">
-        <i className="fas fa-map-marker-alt" style={{ color: 'var(--red)' }}></i> Rajshahi, Bangladesh
+
+      <div className="profile-org-meta">
+        <span className="profile-org-item">
+          <i className="fas fa-briefcase" style={{ color: 'var(--blue)' }}></i> JBD IT
+        </span>
+        <span className="profile-meta-sep" aria-hidden="true">·</span>
+        <span className="profile-org-item">
+          <i className="fas fa-map-marker-alt" style={{ color: 'var(--red)' }}></i> {personalProfileInfo.location}
+        </span>
+      </div>
+
+      <p className="profile-bio-text">
+        {personalProfileInfo.bio}
       </p>
 
       <div className="social-box" aria-label="Social Profiles">
@@ -114,3 +135,4 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ onNavigateContac
     </aside>
   );
 };
+

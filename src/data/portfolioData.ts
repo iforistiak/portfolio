@@ -1,14 +1,269 @@
-import { Project, Skill, GalleryPhoto, BlogPost, Testimonial, ClientPartner, EducationItem } from '../types';
+import {
+  Project,
+  Skill,
+  GalleryPhoto,
+  BlogPost,
+  Testimonial,
+  ClientPartner,
+  EducationItem,
+  WorkExperience,
+  PersonalProfileInfo,
+  InterestsData,
+  CoreService,
+  WorkSkillHighlight
+} from '../types';
 
 export const typewriterTitles: string[] = [
-  "IT Specialist & Consultant",
-  "System Administrator",
-  "IT Course Instructor",
-  "E-Commerce & F-Commerce Admin",
-  "Minimal Graphic Designer"
+  "IT Support Specialist",
+  "IT Administration",
+  "Technical Support",
+  "Web Development",
+  "IT Consulting",
+  "Office Operations",
+  "Helping Businesses Solve Technology Challenges"
+];
+
+export const heroDescription: string =
+  "As an IT Support Specialist, IT Administrator, and Web Developer, I deliver dependable technical support, office & CRM operations, IT consulting, and custom web development—helping businesses solve technology challenges, streamline daily workflows, and fuel sustainable growth.";
+
+export const coreServices: CoreService[] = [
+  {
+    id: 'service-1',
+    title: 'IT Support & Technical Troubleshooting',
+    description:
+      'Dedicated remote and on-site technical support for Windows & Linux workstations, software diagnostics, hardware troubleshooting, and rapid issue resolution to keep businesses running smoothly.',
+    icon: 'fas fa-headset',
+    iconColor: 'var(--blue)'
+  },
+  {
+    id: 'service-2',
+    title: 'IT Administration & System Management',
+    description:
+      'End-to-end office IT administration, MikroTik router & network security configuration, user access management, server maintenance, and automated data backup solutions.',
+    icon: 'fas fa-network-wired',
+    iconColor: 'var(--green)'
+  },
+  {
+    id: 'service-3',
+    title: 'Office Operations & CRM Management',
+    description:
+      'Streamlining daily office operations, CRM setup and administration, digital record management, client communication pipelines, and automated administrative workflows.',
+    icon: 'fas fa-users-cog',
+    iconColor: 'var(--purple)'
+  },
+  {
+    id: 'service-4',
+    title: 'Web Design & Full-Stack Development',
+    description:
+      'Fast, mobile-responsive, and search-optimized business websites, custom web portals, and e-commerce platforms engineered for speed, clarity, and reliability.',
+    icon: 'fas fa-code',
+    iconColor: 'var(--cyan)'
+  },
+  {
+    id: 'service-5',
+    title: 'IT Consulting & Technology Solutions',
+    description:
+      'Helping businesses solve complex technology challenges through practical IT audits, infrastructure upgrade planning, workflow digitization, and strategic tech consulting.',
+    icon: 'fas fa-lightbulb',
+    iconColor: '#f59e0b'
+  },
+  {
+    id: 'service-6',
+    title: 'Hardware Engineering & Office Setups',
+    description:
+      'Custom workstation assembly, SSD & hardware upgrades, BIOS optimization, structured LAN/Wi-Fi deployment, and complete multi-device office IT setups.',
+    icon: 'fas fa-microchip',
+    iconColor: 'var(--red)'
+  }
+];
+
+export const personalProfileInfo: PersonalProfileInfo = {
+  fullName: "Md. Istiak Islam",
+  headlineRoles: [
+    "IT Support Specialist",
+    "IT Administration",
+    "Technical Support",
+    "Web Development",
+    "IT Consulting",
+    "Office Operations",
+    "Helping Businesses Solve Technology Challenges"
+  ],
+  bio: "Versatile IT & Ops pro skilled in tech support, CRM, and admin. Driven to fuel growth via technology.",
+  company: "JBD IT (JBDIT)",
+  companyCategory: "Information Technology Company",
+  location: "Rajshahi, Bangladesh",
+  hometown: "Rajshahi",
+  birthday: "October 19",
+  college: "Rajshahi Court College, Rajshahi.",
+  instagram: "istiakislam_",
+  openToWorkRoles: [
+    "Administrative Assistant",
+    "Assistant Manager",
+    "Computer Operator"
+  ]
+};
+
+export const workSkillHighlights: WorkSkillHighlight[] = [
+  {
+    id: 'wskill-1',
+    title: 'IT Support & Technical Troubleshooting',
+    category: 'Remote & On-Site Support',
+    summary: 'Rapid diagnosis and resolution of Windows/Linux OS issues, software crashes, workstation bottlenecks, and remote desktop support via AnyDesk & TeamViewer.',
+    proficiency: 96,
+    icon: 'fas fa-headset',
+    gradient: 'linear-gradient(135deg, #2563eb, #06b6d4)'
+  },
+  {
+    id: 'wskill-2',
+    title: 'IT Administration & Office Operations',
+    category: 'Systems & Admin Management',
+    summary: 'End-to-end office IT administration, user access control, digital record management, hardware inventory tracking, and streamlined daily operational workflows.',
+    proficiency: 94,
+    icon: 'fas fa-tasks',
+    gradient: 'linear-gradient(135deg, #10b981, #059669)'
+  },
+  {
+    id: 'wskill-3',
+    title: 'CRM Management & Client Coordination',
+    category: 'CRM & Business Ops',
+    summary: 'Configuring and managing customer relationship systems, client communication pipelines, service ticketing, and automated follow-up workflows to fuel business growth.',
+    proficiency: 92,
+    icon: 'fas fa-users-cog',
+    gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)'
+  },
+  {
+    id: 'wskill-4',
+    title: 'Network Engineering & Server Security',
+    category: 'MikroTik & Infrastructure',
+    summary: 'MikroTik RouterOS bandwidth management, dual-ISP auto-failover, WireGuard VPN tunnels, LAN cabling, and automated NAS/cloud server backup setups.',
+    proficiency: 92,
+    icon: 'fas fa-network-wired',
+    gradient: 'linear-gradient(135deg, #0ea5e9, #2563eb)'
+  },
+  {
+    id: 'wskill-5',
+    title: 'Web Development & E-Commerce Portals',
+    category: 'Full-Stack Web Solutions',
+    summary: 'Building fast, responsive business websites, custom web applications, e-commerce catalogs, and secure local payment gateway integrations.',
+    proficiency: 88,
+    icon: 'fas fa-laptop-code',
+    gradient: 'linear-gradient(135deg, #f59e0b, #ef4444)'
+  },
+  {
+    id: 'wskill-6',
+    title: 'IT Consulting & Hardware Engineering',
+    category: 'Technology Strategy & Builds',
+    summary: 'Helping businesses solve technology challenges through strategic IT consulting, custom workstation assembly, BIOS tuning, and scalable office upgrades.',
+    proficiency: 93,
+    icon: 'fas fa-microchip',
+    gradient: 'linear-gradient(135deg, #ec4899, #8b5cf6)'
+  }
+];
+
+export const workExperiences: WorkExperience[] = [
+  {
+    id: 'work-1',
+    company: 'Health Wealth & Career Buildup Corner',
+    role: 'Information Technology Analyst (IT Analyst)',
+    period: 'Feb 6, 2021 - Present',
+    duration: '5 years, 8 months',
+    isCurrent: true,
+    icon: 'fas fa-chart-line',
+    accentColor: 'var(--green)',
+    gradient: 'linear-gradient(135deg, #10b981, #059669)'
+  },
+  {
+    id: 'work-2',
+    company: 'JBDIT',
+    role: 'IT Support Admin',
+    period: 'Feb 17, 2024 - Present',
+    duration: '2 years, 8 months',
+    isCurrent: true,
+    icon: 'fas fa-headset',
+    accentColor: 'var(--blue)',
+    gradient: 'linear-gradient(135deg, #2563eb, #06b6d4)'
+  },
+  {
+    id: 'work-3',
+    company: 'Hello Istiak',
+    role: 'IT Project Manager',
+    period: 'Apr 8, 2021 - Present',
+    duration: '5 years, 6 months',
+    isCurrent: true,
+    icon: 'fas fa-tasks',
+    accentColor: 'var(--purple)',
+    gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)'
+  },
+  {
+    id: 'work-4',
+    company: 'Selim English Education',
+    role: 'Manager',
+    period: 'Oct 27, 2021 - Apr 29, 2023',
+    duration: '1 year, 6 months',
+    isCurrent: false,
+    icon: 'fas fa-user-tie',
+    accentColor: 'var(--blue-light)',
+    gradient: 'linear-gradient(135deg, #0ea5e9, #2563eb)'
+  },
+  {
+    id: 'work-5',
+    company: 'Hello DXN',
+    role: 'Managing editor',
+    period: 'Aug 9, 2021 - Aug 20, 2021',
+    isCurrent: false,
+    icon: 'fas fa-pen-nib',
+    accentColor: 'var(--red)',
+    gradient: 'linear-gradient(135deg, #ef4444, #f59e0b)'
+  },
+  {
+    id: 'work-6',
+    company: 'Alamgir Swimming Club',
+    role: 'Swimmer',
+    period: 'Aug 13, 2015 - Mar 12, 2017',
+    duration: '1 year, 6 months',
+    isCurrent: false,
+    icon: 'fas fa-swimmer',
+    accentColor: 'var(--cyan)',
+    gradient: 'linear-gradient(135deg, #06b6d4, #3b82f6)'
+  }
 ];
 
 export const clientPartners: ClientPartner[] = [
+  {
+    id: 'org-1',
+    name: 'JBDIT (JBD IT)',
+    sector: 'IT Support Admin • Rajshahi',
+    icon: 'fas fa-headset',
+    gradient: 'linear-gradient(135deg, #2563eb, #06b6d4)'
+  },
+  {
+    id: 'org-2',
+    name: 'Health Wealth & Career Buildup Corner',
+    sector: 'IT Analyst • Since 2021',
+    icon: 'fas fa-chart-line',
+    gradient: 'linear-gradient(135deg, #10b981, #059669)'
+  },
+  {
+    id: 'org-3',
+    name: 'Hello Istiak',
+    sector: 'IT Project Manager • Since 2021',
+    icon: 'fas fa-tasks',
+    gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)'
+  },
+  {
+    id: 'org-4',
+    name: 'Selim English Education',
+    sector: 'Operations Manager • Rajshahi',
+    icon: 'fas fa-user-tie',
+    gradient: 'linear-gradient(135deg, #0ea5e9, #2563eb)'
+  },
+  {
+    id: 'org-5',
+    name: 'Hello DXN',
+    sector: 'Managing Editor • Media',
+    icon: 'fas fa-pen-nib',
+    gradient: 'linear-gradient(135deg, #ef4444, #f59e0b)'
+  },
   {
     id: 'client-1',
     name: 'Apex Tech Mart',
@@ -69,95 +324,95 @@ export const clientPartners: ClientPartner[] = [
 
 export const testimonials: Testimonial[] = [
   {
-    id: 1,
-    name: 'Tanvir Ahmed',
-    role: 'Founder, Apex Tech Mart (Dhaka)',
-    badge: 'E-Commerce Development',
-    badgeClass: 'badge-client',
-    badgeIcon: 'fas fa-shopping-cart',
-    quote: 'Our online store used to take forever to load on mobile phones and customers were dropping off at checkout. Istiak rebuilt the storefront, fixed our bKash and SSLCommerz checkout flow, and made the whole site super fast. Truly dependable work.',
-    initials: 'TA',
-    avatarGradient: 'linear-gradient(135deg, #10b981, #06b6d4)'
-  },
-  {
-    id: 2,
-    name: 'Mahmudul Hasan',
-    role: 'Operations Manager, NextGen BD',
-    badge: 'Office Network & MikroTik',
-    badgeClass: 'badge-network',
-    badgeIcon: 'fas fa-network-wired',
-    quote: "With 35+ people working in our office, zoom calls used to freeze whenever someone downloaded large files. Istiak configured our MikroTik router with proper bandwidth queues and dual-ISP failover. We haven't had a single drop in months.",
-    initials: 'MH',
-    avatarGradient: 'linear-gradient(135deg, #2563eb, #60a5fa)'
-  },
-  {
-    id: 3,
-    name: 'Kamrul Islam',
-    role: 'Managing Partner, Padma Trade House',
-    badge: 'Remote Emergency IT Support',
+    id: 101,
+    name: 'Ariful Islam',
+    role: 'Managing Director, Rajshahi Trade Link',
+    badge: 'IT Support & Troubleshooting',
     badgeClass: 'badge-support',
     badgeIcon: 'fas fa-headset',
-    quote: 'রাত ১১টার দিকে আমাদের অফিসের মেইন একাউন্টিং পিসি হঠাৎ ক্র্যাশ করেছিল। Istiak ভাইকে কল দেওয়ার সাথে সাথেই উনি AnyDesk-এ ঢুকে আমাদের সব ডাটা অক্ষত রেখে সিস্টেম রিকভার করে দেন। ওনার মতো রেসপন্সিভ মানুষ খুব কম পাওয়া যায়।',
-    isBangla: true,
-    initials: 'KR',
-    avatarGradient: 'linear-gradient(135deg, #8b5cf6, #c084fc)'
+    quote: 'Whenever our office computers or accounting systems face technical glitches, Istiak resolves them within minutes via remote support or an on-site visit. His calm, systematic troubleshooting has saved our business hours of costly downtime.',
+    initials: 'AI',
+    avatarGradient: 'linear-gradient(135deg, #2563eb, #06b6d4)'
   },
   {
-    id: 4,
-    name: 'Nusrat Farhana',
-    role: 'Director, SilkCity Design Studio (Rajshahi)',
-    badge: 'Business Web Portal',
+    id: 102,
+    name: 'Sadia Afrin',
+    role: 'Operations Head, Horizon Consultancy BD',
+    badge: 'IT Administration & Office Ops',
     badgeClass: 'badge-client',
-    badgeIcon: 'fas fa-globe',
-    quote: 'I needed a clean, trustworthy website for my consultancy where clients could book appointments directly on WhatsApp and email. He understood exactly what I wanted without complicated jargon and delivered two days ahead of schedule.',
-    initials: 'NF',
-    avatarGradient: 'linear-gradient(135deg, #f59e0b, #fbbf24)'
-  },
-  {
-    id: 5,
-    name: 'Dr. Shakil Zaman',
-    role: 'Coordinator, Metro Care Diagnostics',
-    badge: 'Server & Data Backup Setup',
-    badgeClass: 'badge-network',
-    badgeIcon: 'fas fa-server',
-    quote: 'আমাদের ডায়াগনস্টিক সেন্টারের লোকাল সার্ভার এবং অটোমেটেড ব্যাকআপ সিস্টেম পুরোটা Istiak সেটআপ করে দিয়েছেন। আগে প্রতিদিন ম্যানুয়ালি ফাইল কপি করতে হতো, এখন রাত ১২টায় অটোমেটিক ক্লাউড ও নাস ড্রাইভে ব্যাকআপ হয়ে যায়।',
-    isBangla: true,
-    initials: 'SZ',
-    avatarGradient: 'linear-gradient(135deg, #ec4899, #f472b6)'
-  },
-  {
-    id: 6,
-    name: 'Rashedul Haque',
-    role: 'Creative Lead, FrameCraft Media',
-    badge: 'Custom Workstation Build',
-    badgeClass: 'badge-support',
-    badgeIcon: 'fas fa-microchip',
-    quote: 'He helped our video editing agency pick the right PC hardware components within budget, assembled four high-end workstations with clean cable management, and tuned the BIOS & storage drives so 4K rendering runs cooler and faster.',
-    initials: 'RH',
-    avatarGradient: 'linear-gradient(135deg, #06b6d4, #2563eb)'
-  },
-  {
-    id: 7,
-    name: 'Ashraful Alam',
-    role: 'Proprietor, Rajshahi Gadget Corner',
-    badge: 'Catalog & Store Management',
-    badgeClass: 'badge-client',
-    badgeIcon: 'fas fa-store',
-    quote: 'আমাদের শো-রুমের ইনভেন্টরি আর ওয়েবসাইটের প্রোডাক্ট ক্যাটালগ সবসময় এলোমেলো হয়ে থাকতো। Istiak ভাই পুরো সিস্টেমটা এত সুন্দরভাবে গুছিয়ে দিয়েছেন যে আমাদের স্টাফরাও এখন খুব সহজেই অর্ডার আর স্টক আপডেট করতে পারে।',
-    isBangla: true,
-    initials: 'AR',
+    badgeIcon: 'fas fa-tasks',
+    quote: 'Istiak completely restructured our daily office IT operations and CRM workflow. From setting up staff user permissions to organizing our client database and cloud files, everything now runs smoothly without administrative bottlenecks.',
+    initials: 'SA',
     avatarGradient: 'linear-gradient(135deg, #10b981, #059669)'
   },
   {
-    id: 8,
-    name: 'Farhan Imtiaz',
-    role: 'IT Lead, Bengal Agro Logistics',
-    badge: 'Branch VPN & Firewall',
-    badgeClass: 'badge-network',
-    badgeIcon: 'fas fa-shield-alt',
-    quote: 'Connecting our Dhaka and Rajshahi branch offices securely used to be a constant headache. Istiak set up a site-to-site WireGuard VPN on our routers and locked down unauthorized access. Rock-solid stability ever since.',
-    initials: 'FI',
+    id: 103,
+    name: 'Mehedi Hasan',
+    role: 'CEO, SilkCity Mart BD (Rajshahi)',
+    badge: 'Web Development Service',
+    badgeClass: 'badge-client',
+    badgeIcon: 'fas fa-laptop-code',
+    quote: 'আমাদের প্রতিষ্ঠানের জন্য একটি দ্রুতগতির এবং আধুনিক ওয়েবসাইট প্রয়োজন ছিল। Istiak ভাই খুব অল্প সময়ের মধ্যে মোবাইল-ফ্রেন্ডলি ওয়েবসাইট ও কাস্টমার ইনকোয়ারি সিস্টেম তৈরি করে দিয়েছেন, যা আমাদের অনলাইন সেলস অনেক বাড়িয়েছে।',
+    isBangla: true,
+    initials: 'MH',
     avatarGradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)'
+  },
+  {
+    id: 104,
+    name: 'Tariqul Alam',
+    role: 'Director, NorthBengal Agro & Cold Storage',
+    badge: 'IT Consulting & Strategy',
+    badgeClass: 'badge-network',
+    badgeIcon: 'fas fa-lightbulb',
+    quote: 'We hired Istiak for IT consulting when upgrading our branch office systems. He audited our existing setup, recommended cost-effective hardware and network upgrades, and helped us solve long-standing connectivity challenges.',
+    initials: 'TA',
+    avatarGradient: 'linear-gradient(135deg, #f59e0b, #ef4444)'
+  },
+  {
+    id: 105,
+    name: 'Engr. Rezaul Karim',
+    role: 'Founder, PixelCraft Studio (Rajshahi)',
+    badge: 'Technical Support & Hardware',
+    badgeClass: 'badge-support',
+    badgeIcon: 'fas fa-microchip',
+    quote: 'অফিসের পিসিগুলোর হার্ডওয়্যার আপগ্রেড, এসএসডি সেটআপ এবং নেটওয়ার্ক মেইনটেন্যান্সের জন্য আমরা সবসময় Istiak-এর সার্ভিস নিয়ে থাকি। ওনার কাজের ফিনিশিং এবং টেকনিক্যাল সাপোর্ট সত্যিই অসাধারণ ও নির্ভরযোগ্য।',
+    isBangla: true,
+    initials: 'RK',
+    avatarGradient: 'linear-gradient(135deg, #06b6d4, #2563eb)'
+  },
+  {
+    id: 106,
+    name: 'Nabila Tabassum',
+    role: 'Client Relations Lead, PrimeCare Services',
+    badge: 'CRM & Admin Automation',
+    badgeClass: 'badge-client',
+    badgeIcon: 'fas fa-users-cog',
+    quote: 'Tracking client appointments and follow-up calls used to be chaotic for our front-desk team. Istiak implemented a clean CRM and digital admin system and trained our staff so every client inquiry is tracked accurately.',
+    initials: 'NT',
+    avatarGradient: 'linear-gradient(135deg, #ec4899, #8b5cf6)'
+  },
+  {
+    id: 107,
+    name: 'Shahriar Kabir',
+    role: 'Branch Manager, Padma Valley Logistics',
+    badge: 'Network & Server Administration',
+    badgeClass: 'badge-network',
+    badgeIcon: 'fas fa-network-wired',
+    quote: 'Our office Wi-Fi and router used to drop connections during peak hours. Istiak reconfigured our MikroTik router with smart bandwidth management and automated server backups. Our network has been rock-solid ever since.',
+    initials: 'SK',
+    avatarGradient: 'linear-gradient(135deg, #10b981, #0ea5e9)'
+  },
+  {
+    id: 108,
+    name: 'Zahinul Haque',
+    role: 'Co-Founder, EduSpark Academy',
+    badge: 'Web Portal & Ongoing IT Support',
+    badgeClass: 'badge-support',
+    badgeIcon: 'fas fa-globe',
+    quote: 'আমাদের একাডেমির ওয়েব পোর্টাল তৈরি থেকে শুরু করে প্রতিদিনের আইটি ও অফিস অপারেশন সাপোর্ট—সবকিছুতেই Istiak ভাই আমাদের প্রথম পছন্দ। যেকোনো টেকনিক্যাল সমস্যায় ওনাকে নক দিলে দ্রুত সমাধান পাওয়া যায়।',
+    isBangla: true,
+    initials: 'ZH',
+    avatarGradient: 'linear-gradient(135deg, #8b5cf6, #6366f1)'
   }
 ];
 
@@ -423,9 +678,10 @@ export const blogPostsData: BlogPost[] = [
 export const educationItems: EducationItem[] = [
   {
     id: 'edu-1',
-    typeBadge: 'University',
+    typeBadge: 'College / University • Class of 2024',
     badgeIcon: 'fas fa-graduation-cap',
-    institution: 'Rajshahi Court College, Rajshahi',
+    institution: 'Rajshahi Court College, Rajshahi.',
+    classYear: 'Class of 2024',
     degree: 'Bachelor of Arts (BA) — National University',
     description: 'Higher studies emphasizing communications, humanities, and IT management.'
   },
@@ -445,12 +701,33 @@ export const educationItems: EducationItem[] = [
   },
   {
     id: 'edu-4',
-    typeBadge: 'Primary & Junior Education',
+    typeBadge: 'Primary & Secondary Academy',
     badgeIcon: 'fas fa-book-reader',
-    institution: 'Masjid Mission Academy School & College, Rajshahi',
+    institution: 'মসজিদ মিশন একাডেমী, রাজশাহী- Masjid Mission Academy, Rajshahi',
     description: 'Foundational Studies (Class - Play to Seven)'
   }
 ];
+
+export const interestsData: InterestsData = {
+  hobbies: [
+    'Technology',
+    'Planting',
+    'Personal development',
+    'Traveling'
+  ],
+  tvShows: [
+    'National Geographic Explorer',
+    'Man Vs. Wild',
+    'Action movies',
+    'Cartoon',
+    'The Kapil Sharma Show.'
+  ],
+  movies: [
+    '3 Idiots',
+    'Train To Busan',
+    'Interstellar'
+  ]
+};
 
 export function convertGoogleDriveLink(rawUrl: string): string {
   if (!rawUrl) return '';

@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { featuredProjects, technicalSkills } from '../data/portfolioData';
+import {
+  featuredProjects,
+  technicalSkills,
+  workExperiences,
+  personalProfileInfo
+} from '../data/portfolioData';
 
 export const ProjectsSection: React.FC = () => {
   const [animated, setAnimated] = useState(false);
@@ -13,6 +18,61 @@ export const ProjectsSection: React.FC = () => {
 
   return (
     <section id="my-project" className="page-section active" role="tabpanel">
+      {/* Work Experience Section from User Screenshots */}
+      <div className="section-block" id="work-experience-section">
+        <div className="section-header">
+          <h2 className="section-title">Work Experience &amp; Career</h2>
+          <p className="section-subtitle">
+            Professional roles, IT administration, project management, and organizational leadership
+          </p>
+        </div>
+
+        {/* Professional Headline & Specializations Summary Card */}
+        <div className="work-headline-banner">
+          <div className="work-headline-top" style={{ marginBottom: 0 }}>
+            <div className="work-headline-identity">
+              <h3>
+                {personalProfileInfo.fullName}
+                <span className="inline-verified-icon" title="Verified Profile" aria-hidden="true">
+                  <i className="fas fa-shield-alt"></i>
+                </span>
+              </h3>
+              <p className="work-headline-sub">
+                {personalProfileInfo.headlineRoles.join(' | ')}
+              </p>
+            </div>
+            <div className="work-headline-org-tag">
+              <i className="fas fa-building"></i> {personalProfileInfo.company} • {personalProfileInfo.location}
+            </div>
+          </div>
+        </div>
+
+        {/* Work Experience Cards Grid */}
+        <div className="work-exp-grid">
+          {workExperiences.map((work) => (
+            <div key={work.id} className="work-exp-card">
+              <div className="work-exp-icon-badge" style={{ background: work.gradient }}>
+                <i className={work.icon}></i>
+              </div>
+              <div className="work-exp-content">
+                <div className="work-exp-header-row">
+                  <h3 className="work-exp-company">{work.company}</h3>
+                  {work.isCurrent && (
+                    <span className="work-exp-status-active">Present</span>
+                  )}
+                </div>
+                <p className="work-exp-role">{work.role}</p>
+                <p className="work-exp-period">
+                  <i className="far fa-calendar-alt"></i> {work.period}
+                  {work.duration ? ` · ${work.duration}` : ''}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Featured Work & Projects */}
       <div className="section-block">
         <div className="section-header">
           <h2 className="section-title red">Featured Work &amp; Projects</h2>
@@ -101,3 +161,4 @@ export const ProjectsSection: React.FC = () => {
     </section>
   );
 };
+
